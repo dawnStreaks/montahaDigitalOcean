@@ -247,17 +247,17 @@
                     $('#price').val(data.price).trigger('change');
                     // alert(data.qty);
 
-                   if(data.qty < 0 && save_method == 'add')
-                   {
-                    $('#product_id').val("").trigger('change');
+                //    if(data.qty < 0 && save_method == 'add')
+                //    {
+                //     $('#product_id').val("").trigger('change');
 
-                    swal({
-                            title: 'Oops...',
-                            text: "Out of stock",
-                            type: 'error',
-                            timer: '1500'
-                        })
-                   }
+                //     swal({
+                //             title: 'Oops...',
+                //             text: "Out of stock",
+                //             type: 'error',
+                //             timer: '1500'
+                //         })
+                //    }
 
 
                 }
