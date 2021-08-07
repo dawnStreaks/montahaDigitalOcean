@@ -150,12 +150,14 @@ class ProductController extends Controller
             $input['image'] = '/upload/products/'.str_slug($input['name'], '-').'.'.$request->image->getClientOriginalExtension();
             $request->image->move(public_path('/upload/products/'), $input['image']);
         }
-
-        // $barcode = Barcode::findOrFail($produk->barcode_id);
-        // $barcode->name = $input['barcode'];
-        // $barcode->save();
-
         $produk->update($input);
+
+         $barcode = Barcode::findOrFail($produk->barcode_id);
+         $barcode->name = $produk->id. '-' .$produk->name;
+         $barcode->save();
+
+        
+
 
         return response()->json([
             'success' => true,
