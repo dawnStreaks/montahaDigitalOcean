@@ -202,10 +202,10 @@
             $('.modal-title').text('Add Products');
         }
 
-        $(document).on("change","#product_id",function(){
-            checkAvailable(this.value);
-            // alert(this.value);
-        });
+        // $(document).on("change","#product_id",function(){
+        //     checkAvailable(this.value);
+        //     // alert(this.value);
+        // });
 
         function editForm(id) {
             save_method = 'edit';
@@ -245,6 +245,8 @@
                     $('#available').text(data.qty);
                     $('#productName').text(data.name);
                     $('#price').val(data.price).trigger('change');
+                    // $('#product_id').val(data.product_id);
+
                     // alert(data.qty);
 
                 //    if(data.qty < 0 && save_method == 'add')
