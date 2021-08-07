@@ -202,10 +202,10 @@
             $('.modal-title').text('Add Products');
         }
 
-        // $(document).on("change","#product_id",function(){
-        //     checkAvailable(this.value);
-        //     // alert(this.value);
-        // });
+        $(document).on("change","#product_id",function(){
+            checkAvailable(this.value);
+            // alert(this.value);
+        });
 
         function editForm(id) {
             save_method = 'edit';
@@ -245,7 +245,7 @@
                     $('#available').text(data.qty);
                     $('#productName').text(data.name);
                     $('#price').val(data.price).trigger('change');
-                    // $('#product_id').val(data.product_id);
+                    $('#product_id').val("280-b-o-x dress").trigger('change');
 
                     // alert(data.qty);
 
