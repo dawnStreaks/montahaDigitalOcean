@@ -245,7 +245,7 @@
                     $('#available').text(data.qty);
                     $('#productName').text(data.name);
                     $('#price').val(data.price).trigger('change');
-                    $('#product_id').val("280-b-o-x dress").trigger('change');
+                    $('#product_id').val(data.barcode_name);
 
                     // alert(data.qty);
 

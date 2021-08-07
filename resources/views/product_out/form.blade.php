@@ -23,7 +23,7 @@
                         </div> --}}
                         <div class="form-group">
                             <label>Products</label>
-                            <input type="text"  id="product_id" name="product_id"   onmouseover="this.focus();">
+                            <input type="text" class="form-control"  id="product_id" name="product_id"   onmouseover="this.focus();">
                             {{-- <input id="barcode_name" name="barcode_name" onmouseover="this.focus();" type="text" style="padding-left:10px;"> --}}
 
                             {{-- <span class="text-danger"><span id="productName"></span> currently number <span id="available">0</span>.</span> --}}

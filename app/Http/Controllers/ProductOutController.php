@@ -320,9 +320,9 @@ return response()->json([
 
     public function checkAvailable($id)
     {
-
+        $b_name = $id;
         $barcode = \DB::select(\DB::raw("select id from barcodes where name = '$id'"));//product_id is the barcode name
-        
+        // var_dump($barcode);
         $barcode_id = $barcode[0]->id;
         $find_product = \DB::select(\DB::raw("select id, name from products where barcode_id = $barcode_id"));
          //$Product_Out->update($request->all());
@@ -330,6 +330,7 @@ return response()->json([
          $product_id = $find_product[0]->id;
  
         $Product = Product::findOrFail($product_id);
+        $Product['barcode_name']=$b_name;
         return $Product;
     }
 }
