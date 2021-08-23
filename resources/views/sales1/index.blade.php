@@ -5,7 +5,6 @@
 @section('top')
     <!-- DataTables -->
     <link rel="stylesheet" href="{{ asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
-
     <!-- daterange picker -->
     <link rel="stylesheet" href="{{ asset('assets/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
     <!-- bootstrap datepicker -->
@@ -28,7 +27,7 @@
     <div class="box">
 
         <div class="box-header">
-            <h3 class="box-title">Data Sales</h3>
+            <h3 class="box-title">Invoice</h3>
         </div>
 
         <div class="box-header">
@@ -37,6 +36,28 @@
             <a href="{{ route('exportExcel.salesAll1') }}" class="btn btn-success">Export Excel</a>
         </div>
 
+        <div>
+            <form id="filter-form">
+                
+                <div class="row input-daterange">
+                    <div class="col-md-3">
+                        <input type="text" name="from_date" id="from_date" class="form-control" placeholder="From Date" readonly />
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" name="to_date" id="to_date" class="form-control" placeholder="To Date" readonly />
+                    </div>
+                    <div class="col-md-3">
+                        <button type="submit" value="Submit" name="filter" id="filter" class="btn btn-primary">Filter</button>
+                        <button type="button" name="refresh" id="refresh" class="btn btn-default">Refresh</button>
+                    </div>
+                    <b> Subtotal </b>
+                    <div id="subtotal" class="col-md-3">
+                        
+                    </div>
+                </div>
+            </form>
+          </div>
+        <br />
 
         <!-- /.box-header -->
         <div class="box-body">
@@ -114,10 +135,18 @@
     </script>
 
     <script type="text/javascript">
+        var url = '{{ route('api.sales1') }}';
         var table = $('#sales-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('api.sales1') }}",
+            ajax: {
+            url: "{{ route('api.sales1') }}",
+            type: "GET", // or 'GET' if you prefer
+            data: function (data) {
+             data.from_date = $('#from_date').val();
+             data.to_date = $('#to_date').val();
+                }
+                },
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'po_no', name: 'po_no'},
@@ -129,6 +158,35 @@
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ]
         });
+        $( "#filter-form" ).submit(function( event ) {
+          event.preventDefault();
+          table.ajax.url( url ).load();
+          getSubtotalSum($('#from_date').val(),$('#to_date').val());
+});
+
+$('#refresh').click(function(){
+  $('#from_date').val('');
+  $('#to_date').val('');
+//   $('#orders-table').DataTable().destroy();
+  table.ajax.url( url ).load();
+  
+//   $('#subtotal').text(table.column( 6 ).data().sum());
+
+ });     
+function getSubtotalSum(from_date, to_date) {
+            $.ajax({
+                url: "{{ url('getSubtotalSumInvoice') }}" + '/' + from_date + '/' + to_date ,
+                type: "GET",
+                dataType: "JSON",
+                success: function(data) {
+                    $('#subtotal').text(data.data);
+                    console.log(data);
+                    // $('#productName').text(data.name);
+                    // $('#price').val(data.price);
+
+                }
+            });
+        }
 
         function addForm() {
             save_method = "add";
@@ -137,6 +195,13 @@
             $('#modal-form form')[0].reset();
             $('.modal-title').text('Add Sales');
         }
+
+        $('.input-daterange').datepicker({
+         todayBtn:'linked',
+         format:'yyyy-mm-dd',
+         autoclose:true
+         });
+
 
         function refund(id) {
             swal({

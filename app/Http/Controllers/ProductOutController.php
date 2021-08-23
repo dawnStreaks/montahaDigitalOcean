@@ -199,11 +199,42 @@ class ProductOutController extends Controller
         ]);
     }
 
+    public function getSubtotalSumProductOut(Request $request){
+
+        if(!empty($request->from_date))
+        {
+         
+        // $subtotal =  \DB::select(\DB::raw("SELECT subtotal FROM Orders WHERE OrderDate BETWEEN $request->from_date AND $request->to_date"));
+        $subtotal =  Sale_New::whereBetween('date', array($request->from_date, $request->to_date))->sum('subtotal');
+        // var_dump($subtotal);
+        }
+        else
+        {
+                
+        $subtotal = Sale_New::sum('subtotal');
+                //  var_dump($subtotal_sum);
+        }
+
+        return response()->json([
+            'success'    => true,
+            'data'    => $subtotal //[0]->subtotal
+        ]);
+        }
 
 
-    public function apiProductsOut(){
-        $product = Product_Out::all();
+    public function apiProductsOut(Request $request){
         // $refund = Refund::all();
+        if(!empty($request->from_date))
+        {
+            $product = Product_Out::whereBetween('date', array($request->from_date, $request->to_date))->get();
+      
+        }
+        else
+        {
+            $product = Product_Out::all();
+               
+
+        }
 // dd($product);
         return Datatables::of($product)
             ->addColumn('products_name', function ($product){

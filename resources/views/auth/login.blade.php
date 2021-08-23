@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Inventory Stock Management | Login </title>
+    <title>Montaha Couture | Login </title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -27,11 +27,18 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+<style>
+    body{
+        background : #fff !important ;
+    }
+</style>
 <body class="hold-transition login-page">
 
 <div class="login-box">
     <div class="login-logo">
-        <h1><b>Inventory Stock</b> Management</h1>
+       
+        <h1> <img src="{{ asset('upload/logo/logo.jpeg') }}" style="width:50%; height:30%; width:200px;"> </h1>
+        {{-- <b>Montaha Couture</b> --}}
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">

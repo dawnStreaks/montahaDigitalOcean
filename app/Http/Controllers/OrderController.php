@@ -44,6 +44,7 @@ class OrderController extends Controller
          return view('orders.index', compact('products', 'invoice_data'));
 
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -75,10 +76,10 @@ class OrderController extends Controller
         $barcode = \DB::select(\DB::raw("select id from barcodes where name = '$request->product_id'"));//product_id is the barcode name
         
         $barcode_id = $barcode[0]->id;
-         $find_product = \DB::select(\DB::raw("select id, name from products where barcode_id = $barcode_id"));
+        $find_product = \DB::select(\DB::raw("select id, name from products where barcode_id = $barcode_id"));
          //$Product_Out->update($request->all());
          // $request->product_id = $find_product[0]->name;
-         $product_id = $find_product[0]->id;
+        $product_id = $find_product[0]->id;
  
         $subtotal = $request->price * $request->qty ;
         if($request->discount > 0)
@@ -202,9 +203,42 @@ class OrderController extends Controller
     }
 
 
+    public function getSubtotalSum(Request $request){
 
-    public function apiOrders(){
-        $order = Order::all();
+        if(!empty($request->from_date))
+        {
+         
+        // $subtotal =  \DB::select(\DB::raw("SELECT subtotal FROM Orders WHERE OrderDate BETWEEN $request->from_date AND $request->to_date"));
+        $subtotal =  Order::whereBetween('date', array($request->from_date, $request->to_date))->sum('subtotal');
+        // var_dump($subtotal);
+        }
+        else
+        {
+                
+                 $subtotal = Order::sum('subtotal');
+                //  var_dump($subtotal_sum);
+        }
+
+        return response()->json([
+            'success'    => true,
+            'data'    => $subtotal //[0]->subtotal
+        ]);
+        }
+    public function apiOrders(Request $request){
+        // $order = Order::all();
+
+        if(!empty($request->from_date))
+        {
+         $order = Order::whereBetween('date', array($request->from_date, $request->to_date))
+           ->get();
+      
+        }
+        else
+        {
+                 $order = Order::all();
+               
+
+        }
 
         return Datatables::of($order)
             ->addColumn('products_name', function ($order){
@@ -291,7 +325,7 @@ class OrderController extends Controller
         $pdf = PDF::loadView('orders.productOutAllPDF',compact('Product_Out'));
         return $pdf->download('product_out.pdf');
     }
-
+ 
     public function exportProductOut(Request $request)
     {
         $idst = explode(",",$request->exportpdf);
@@ -333,7 +367,7 @@ class OrderController extends Controller
     {
         return (new ExportOrders)->download('product_out.xlsx');
     }
-
+    
     public function checkAvailable($id)
     {
         
@@ -347,4 +381,6 @@ class OrderController extends Controller
         $Product = Product::findOrFail($product_id);
         return $Product;
     }
+
+
 }

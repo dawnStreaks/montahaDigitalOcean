@@ -43,8 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/exportSalesAllExcel1','SaleController1@exportExcel')->name('exportExcel.salesAll1');
     Route::get('/generateInvoice/{id}','SaleController1@generateInvoice')->name('generateInvoice');
     Route::get('/salerefund/{id}','SaleController1@refund')->name('refund');
-
-
+    Route::get('/getSubtotalSumInvoice/{from_date}/{to_date}','SaleController1@getSubtotalSumInvoice')->name('getSubtotalSumInvoice');
 
 
     Route::resource('sales','SaleController');
@@ -55,7 +54,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/checkSalesAvailable/{id}','SaleController@checkAvailable')->name('checkSalesAvailable1');
     // Route::post('/barcodescan/{barcode_name}','SaleController@barcodescan')->name('barcode.scan');
     Route::get('/order_complete','SaleController@order_complete')->name('order_complete');
-
 
 
     Route::resource('suppliers','SupplierController');
@@ -76,6 +74,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/exportProductOut','ProductOutController@exportProductOut')->name('exportPDF.productOut');
     Route::get('/checkAvailable/{id}','ProductOutController@checkAvailable')->name('checkAvailable');
     Route::get('/refund/{id}','ProductOutController@refund')->name('refund');
+    Route::get('/getSubtotalSumProductOut/{from_date}/{to_date}','SaleController1@getSubtotalSumProductOut')->name('getSubtotalSumProductOut');
+
 
 
     Route::resource('productsIn','ProductInController');
@@ -95,7 +95,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/exportOrder','OrderController@exportProductOut')->name('exportPDF.order');
     Route::get('/refundOrder/{id}','OrderController@refund')->name('refund');
 
-    // Route::get('/checkAvailable/{id}','OrderController@checkAvailable')->name('checkAvailable');
+    Route::get('/getSubtotalSum/{from_date}/{to_date}','OrderController@getSubtotalSum')->name('getSubtotalSum');
 
 });
 

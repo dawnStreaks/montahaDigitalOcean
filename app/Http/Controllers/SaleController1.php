@@ -138,9 +138,40 @@ class SaleController1 extends Controller
         ]);
     }
 
-    public function apiSales()
+    public function getSubtotalSumInvoice(Request $request){
+
+        if(!empty($request->from_date))
+        {
+         
+        // $subtotal =  \DB::select(\DB::raw("SELECT subtotal FROM Orders WHERE OrderDate BETWEEN $request->from_date AND $request->to_date"));
+        $subtotal =  Sale_New::whereBetween('date', array($request->from_date, $request->to_date))->sum('total_amount');
+        // var_dump($subtotal);
+        }
+        else
+        {
+                
+        $subtotal = Sale_New::sum('total_amount');
+                //  var_dump($subtotal_sum);
+        }
+
+        return response()->json([
+            'success'    => true,
+            'data'    => $subtotal //[0]->subtotal
+        ]);
+        }
+
+    public function apiSales(Request $request)
     {
-        $sales = Sale_New::all();
+
+        if(!empty($request->from_date))
+        {
+            $sales = Sale_New::whereBetween('date', array($request->from_date, $request->to_date))->get();      
+        }
+        else
+        {
+            $sales = Sale_New::all();               
+
+        }
 
         return Datatables::of($sales)
         ->addColumn('customer_name', function ($sales){
@@ -228,12 +259,6 @@ class SaleController1 extends Controller
             $product->update();
             $product_out->price = 0;
             $product_out->qty = 0;
-        // $subtotal = $product_out->price * $product_out->qty ; //in case refund amount is included, 
-
-        //   if($product_out->discount > 0)
-        //     $subtotal = $subtotal - ($subtotal* ($product_out->discount/100));
-        
-            // $product_out->update(['subtotal' => $subtotal,  'refund_status' => $refund_status]);
         
             \DB::table('product_out')
             ->where('id', $product_out->id)
