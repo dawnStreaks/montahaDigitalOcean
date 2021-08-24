@@ -205,13 +205,13 @@ class ProductOutController extends Controller
         {
          
         // $subtotal =  \DB::select(\DB::raw("SELECT subtotal FROM Orders WHERE OrderDate BETWEEN $request->from_date AND $request->to_date"));
-        $subtotal =  Sale_New::whereBetween('date', array($request->from_date, $request->to_date))->sum('subtotal');
+        $subtotal =  Product_Out::whereBetween('date', array($request->from_date, $request->to_date))->sum('subtotal');
         // var_dump($subtotal);
         }
         else
         {
                 
-        $subtotal = Sale_New::sum('subtotal');
+        $subtotal = Product_Out::sum('subtotal');
                 //  var_dump($subtotal_sum);
         }
 

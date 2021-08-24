@@ -74,7 +74,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/exportProductOut','ProductOutController@exportProductOut')->name('exportPDF.productOut');
     Route::get('/checkAvailable/{id}','ProductOutController@checkAvailable')->name('checkAvailable');
     Route::get('/refund/{id}','ProductOutController@refund')->name('refund');
-    Route::get('/getSubtotalSumProductOut/{from_date}/{to_date}','SaleController1@getSubtotalSumProductOut')->name('getSubtotalSumProductOut');
+    Route::get('/getSubtotalSumProductOut/{from_date}/{to_date}','ProductOutController@getSubtotalSumProductOut')->name('getSubtotalSumProductOut');
 
 
 
