@@ -32,15 +32,15 @@
         </div>
 
         <div class="box-header">
-            <a onclick="addForm()" class="btn btn-primary" >Make Orders</a>
-            <a href="{{ route('exportPDF.orderAll') }}" class="btn btn-danger">Export Data PDF</a>
-            <a href="{{ route('exportExcel.orderAll') }}" class="btn btn-success">Export Data Excel</a>
-            <button id="downloadPDF" class="btn btn-primary">Export Invoice PDF</button>
+            <a onclick="addForm()" class="btn btn-primary btn-lg" >Make Orders</a>
+            <a href="{{ route('exportPDF.orderAll') }}" class="btn btn-danger btn-lg">Export Data PDF</a>
+            <a href="{{ route('exportExcel.orderAll') }}" class="btn btn-success btn-lg">Export Data Excel</a>
+            <button id="downloadPDF" class="btn btn-primary btn-lg">Export Invoice PDF</button>
         </div>
         <div>
             <form id="filter-form">
                 
-                <div class="row input-daterange">
+                <div class="row input-daterange" style="margin-left:10px;">
                     <div class="col-md-3">
                         <input type="text" name="from_date" id="from_date" class="form-control" placeholder="From Date" readonly />
                     </div>

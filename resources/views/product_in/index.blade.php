@@ -33,9 +33,9 @@
         </div>
 
         <div class="box-header">
-            <a onclick="addForm()" class="btn btn-primary" >Add Products In</a>
-            <a href="{{ route('exportPDF.productInAll') }}" class="btn btn-danger">Export PDF</a>
-            <a href="{{ route('exportExcel.productInAll') }}" class="btn btn-success">Export Excel</a>
+            <a onclick="addForm()" class="btn btn-primary  btn-lg" >Add Products In</a>
+            <a href="{{ route('exportPDF.productInAll') }}" class="btn btn-danger btn-lg">Export PDF</a>
+            <a href="{{ route('exportExcel.productInAll') }}" class="btn btn-success btn-lg">Export Excel</a>
         </div>
 
         <!-- /.box-header -->

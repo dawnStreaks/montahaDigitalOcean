@@ -72,7 +72,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-lg" style="background-color: #000; padding-bottom:5%;padding-top:5%; ">Sign In</button>
                 </div>
                 <!-- /.col -->
             </div>

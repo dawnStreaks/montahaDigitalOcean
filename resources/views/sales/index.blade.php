@@ -31,13 +31,13 @@
     <div class="box">
 
         <div class="box-header">
-            <h3 class="box-title">Sales</h3>
+            <h3 class="box-title" style="margin-left:10px;"><b>Scan Barcode here</b></h3><br>
             <div  id="barcode-modal-form" style ="margin-left: 20px;" >
                 <form  id="form-item1" method="post" class="form-horizontal" data-toggle="validator" enctype="multipart/form-data" >
                     {{ csrf_field() }} {{ method_field('POST') }}
     
                   <div class="form-group">
-                    <input id="barcode_name" name="barcode_name" onmouseover="this.focus();" type="text" style="padding-left:10px;">
+                    <input id="barcode_name" name="barcode_name" onmouseover="this.focus();" type="text" style="padding-left:10px;padding-right:30%;">
                   </div>
                 {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
                 </form>
@@ -47,9 +47,9 @@
 
         <div class="box-header">
             {{-- <a onclick="addForm()" class="btn btn-primary" >Add Products Out</a> --}}
-            <a href="{{ route('exportPDF.productOutAll1') }}" class="btn btn-danger">Export Data PDF</a>
-            <a href="{{ route('exportExcel.productOutAll1') }}" class="btn btn-success">Export Data Excel</a>
-             <button id="order_completed" class="btn btn-primary"> Order Completed</button>
+            <a href="{{ route('exportPDF.productOutAll1') }}" class="btn btn-danger btn-lg">Export Data PDF</a>
+            <a href="{{ route('exportExcel.productOutAll1') }}" class="btn btn-success btn-lg">Export Data Excel</a>
+             <button id="order_completed" class="btn btn-primary btn-lg"> Order Completed</button>
 
             {{-- <button id="downloadPDF" class="btn btn-primary">Export Invoice PDF</button> --}}
         </div>

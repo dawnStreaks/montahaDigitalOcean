@@ -28,7 +28,7 @@
         </div>
 
         <div class="box-header">
-            <a onclick="addForm()" class="btn btn-primary" >Add User</a>
+            <a onclick="addForm()" class="btn btn-primary btn-lg" >Add User</a>
         </div>
 
 
