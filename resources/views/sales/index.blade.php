@@ -30,6 +30,17 @@
 @section('content')
     <div class="box">
 
+        
+
+        <div class="box-header">
+            {{-- <a onclick="addForm()" class="btn btn-primary" >Add Products Out</a> --}}
+            <a href="{{ route('exportPDF.productOutAll1') }}" class="btn btn-danger btn-lg">Export Data PDF</a>
+            <a href="{{ route('exportExcel.productOutAll1') }}" class="btn btn-success btn-lg">Export Data Excel</a>
+             <button id="order_completed" class="btn btn-primary btn-lg"> Order Completed</button>
+
+            {{-- <button id="downloadPDF" class="btn btn-primary">Export Invoice PDF</button> --}}
+        </div>
+
         <div class="box-header">
             <h3 class="box-title" style="margin-left:10px;"><b>Scan Barcode here</b></h3><br>
             <div  id="barcode-modal-form" style ="margin-left: 20px;" >
@@ -44,16 +55,6 @@
 
             </div>
         </div>
-
-        <div class="box-header">
-            {{-- <a onclick="addForm()" class="btn btn-primary" >Add Products Out</a> --}}
-            <a href="{{ route('exportPDF.productOutAll1') }}" class="btn btn-danger btn-lg">Export Data PDF</a>
-            <a href="{{ route('exportExcel.productOutAll1') }}" class="btn btn-success btn-lg">Export Data Excel</a>
-             <button id="order_completed" class="btn btn-primary btn-lg"> Order Completed</button>
-
-            {{-- <button id="downloadPDF" class="btn btn-primary">Export Invoice PDF</button> --}}
-        </div>
-
         <!-- /.box-header -->
         <div class="box-body">
             <table id="products-out-table" class="table table-striped">

@@ -39,7 +39,7 @@
         <div>
             <form id="filter-form">
                 
-                <div class="row input-daterange">
+                <div class="row input-daterange" style="margin-left:5px;">
                     <div class="col-md-3">
                         <input type="text" name="from_date" id="from_date" class="form-control" placeholder="From Date" readonly />
                     </div>
