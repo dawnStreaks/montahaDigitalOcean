@@ -65,7 +65,9 @@ class ProductController extends Controller
         $bc = \DB::table('products')->select('id')->where('barcode_id', $input['barcode_id'] )->get();
         // dd($bc[0]->id);
         $product = Product::findOrFail($bc[0]->id);
-        $input['barcode'] = $product->id. '-' .$barcode->name;
+        // $input['barcode'] = $product->id. '-' .$barcode->name;
+        $input['barcode']= $product->id. '-KWD ' .$product->price;
+
         $bcode = Barcode::findOrFail($input['barcode_id']);
         $bcode->name = $input['barcode'];
         $bcode->save();
@@ -153,7 +155,9 @@ class ProductController extends Controller
         $produk->update($input);
 
          $barcode = Barcode::findOrFail($produk->barcode_id);
-         $barcode->name = $produk->id. '-' .$produk->name;
+         $barcode->name = $produk->id. '-KWD ' .$produk->price;
+
+        //  $barcode->name = $produk->id. '-' .$produk->name;
          $barcode->save();
 
         
