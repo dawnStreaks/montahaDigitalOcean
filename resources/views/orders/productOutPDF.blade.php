@@ -184,23 +184,22 @@
             <br>
 
             <tr class="total">
-               <br><br>
+               
                 <td colspan="3">
-                    Total Items: {{number_format($total)}}
+                   <b> Total Items:</b> {{number_format($total)}}
                 </td>
-            </tr>
-            <tr>
-                <td colspan="3">
-                   Total: {{number_format($allTotal, 3, '.', '')}} KD
-                </td>
-            </tr>
-            <tr>
-                <td colspan="1">Credit: &nbsp; </td><td colspan="1">{{ number_format($credit, 3, '.', '') }}KD </td>
-            </tr>
-            <tr>
-                <td colspan="1">Paid: </td><td colspan="1">{{ number_format($paid_amount, 3, '.', '') }}KD </td>
-            </tr>
+            
           
+                <td colspan="3">
+                   <b>Total: </b> {{number_format($allTotal, 3, '.', '')}} KD
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1"><b>Credit: </b> </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD  &nbsp;</td>
+            
+            
+                <td colspan="1"> <b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD </td>
+            </tr>          
         </table>
     </div>
 </body>
@@ -392,21 +391,21 @@
             <br>
 
             <tr class="total">
-               <br><br>
+               
                 <td colspan="3">
-                    Total Items: {{number_format($total)}}
+                    <b>Total Items:</b> {{number_format($total)}}
+                </td>
+            
+          
+                <td colspan="3">
+                   <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KD
                 </td>
             </tr>
             <tr>
-                <td colspan="3">
-                   Total : {{number_format($allTotal, 3, '.', '')}} KD
-                </td>
-            </tr>
-            <tr>
-                <td colspan="1">Credit &nbsp; </td><td colspan="1">{{ number_format($credit, 3, '.', '') }}KD </td>
-            </tr>
-            <tr>
-                <td colspan="1">Paid </td><td colspan="1">{{ number_format($paid_amount, 3, '.', '') }}KD </td>
+                <td colspan="1"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD  &nbsp;</td>
+            
+            
+                <td colspan="1"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD </td>
             </tr>
           
         </table>

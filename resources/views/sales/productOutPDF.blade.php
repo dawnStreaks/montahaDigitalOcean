@@ -175,10 +175,10 @@
                 <!-- <td></td>
                 <td></td> -->
                 <td colspan="3">
-                    Total Items: {{number_format($total)}}
+                    <b>Total Items:</b> {{number_format($total)}}
                 </td>
                 <td colspan="3">
-                   Total : {{number_format($allTotal, 3, '.', '')}} KWD
+                   <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD
                 </td>
             </tr>
         </table>
@@ -362,10 +362,10 @@
                 <!-- <td></td>
                 <td></td> -->
                 <td colspan="3">
-                    Total Items: {{number_format($total)}}
+                   <b> Total Items: </b> {{number_format($total)}}
                 </td>
                 <td colspan="3">
-                   Total : {{number_format($allTotal, 3, '.', '')}} KWD
+                   <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD
                 </td>
             </tr>
         </table>
