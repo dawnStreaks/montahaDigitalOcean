@@ -34,6 +34,15 @@
                             <span class="help-block with-errors"></span>
                         </div>
 
+                        <div class="form-group">
+                            <label>Customer Name</label>
+                            <input type="text" class="form-control" id="customer_name" name="customer_name"  required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile No</label>
+                            <input type="text" class="form-control" id="mob_no" name="mob_no"  required>
+                        </div>
+
                         {{-- <div class="form-group">
                             <label>Customer</label>
                             {!! Form::select('customer_id', $customers, null, ['class' => 'form-control select2', 'placeholder' => '-- Choose Customer --', 'id' => 'customer_id', 'required']) !!}

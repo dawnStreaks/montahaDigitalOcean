@@ -94,9 +94,9 @@
                 <a href="{{ route('password.request') }}" class="btn btn-block"><i class="fa fa-fw fa-key"></i> Forgot Password ?</a>
             @endif
 
-            @if (Route::has('register'))
+            {{-- @if (Route::has('register'))
                 <a href="{{ route('register') }}" class="btn btn-block"><i class="fa fa-fw fa-user-plus"></i> Sign Up</a>
-            @endif
+            @endif --}}
         </div>
 
     </div>

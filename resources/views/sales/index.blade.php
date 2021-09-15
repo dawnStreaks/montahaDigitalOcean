@@ -36,7 +36,7 @@
             {{-- <a onclick="addForm()" class="btn btn-primary" >Add Products Out</a> --}}
             <a href="{{ route('exportPDF.productOutAll1') }}" class="btn btn-danger btn-lg">Export Data PDF</a>
             <a href="{{ route('exportExcel.productOutAll1') }}" class="btn btn-success btn-lg">Export Data Excel</a>
-             <button id="order_completed" class="btn btn-primary btn-lg"> Order Completed</button>
+             <button id="order_completed" class="btn btn-primary btn-lg"> Completed</button>
 
             {{-- <button id="downloadPDF" class="btn btn-primary">Export Invoice PDF</button> --}}
         </div>
@@ -210,6 +210,9 @@
                     $('#qty').val(data.qty);
                     $('#price').val(data.price);
                     $('#date').val(data.date);
+                    $('#customer_name').val(data.customer_name);
+                    $('#mob_no').val(data.mob_no);
+
                 },
                 error : function() {
                     alert("Nothing Data");

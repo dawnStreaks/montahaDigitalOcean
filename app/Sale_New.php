@@ -8,7 +8,7 @@ class Sale_New extends Model
 {
     protected $table = 'sales_new';
 
-    protected $fillable = ['po_no','customer_id','total_amount','date', 'refund_status','cashier'];
+    protected $fillable = ['po_no','customer_id','total_amount','date', 'refund_status','cashier','customer_name','mob_no'];
 
 
     protected $hidden = ['created_at','updated_at'];

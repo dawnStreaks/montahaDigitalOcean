@@ -290,7 +290,11 @@ class SaleController1 extends Controller
             ->get();
         
         $companyInfo = Company::find(1);
-       $view = view('sales1.productOutPDF', compact('Product_Out', 'companyInfo'))->render();
+        $Sales_New = \DB::table('sales_new')
+        ->where('po_no', $po_no )
+        ->get();
+
+       $view = view('sales1.productOutPDF', compact('Product_Out', 'companyInfo', 'Sales_New'))->render();
 
         // return view('sales.productOutPDF', compact('Product_Out', 'companyInfo'))->render();    
         return response()->json([

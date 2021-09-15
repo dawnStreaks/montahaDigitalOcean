@@ -61,7 +61,7 @@
             <td>{{ $p->discount }}</td>
             <td>{{ $p->subtotal}}</td>
             <td>{{ $p->qty }}</td>
-            <td>{{ number_format($p->subtotal * $p->qty, 2, '.', '') }}</td>
+            <td>{{ number_format($p->subtotal * $p->qty, 3, '.', '') }}</td>
             <td>{{ $p->date }}</td>
         </tr>
         </tbody>

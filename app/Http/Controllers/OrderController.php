@@ -14,6 +14,7 @@ use PDF;
 use Illuminate\Support\Facades\Response as FacadeResponse;
 use Auth;
 use App\User;
+use App\Size;
 use App\Order;
 
 class OrderController extends Controller
@@ -70,21 +71,24 @@ class OrderController extends Controller
            'price'          => 'required',
            'qty'            => 'required',
            'order_status'   => 'required',
-           'date'           => 'required'
+           'date'           => 'required',
+           'paid_amount'    => 'required',
+        //    'balance'        => 'required',
+           'mob_no'         => 'required',
+        //    'size'          => 'required',
         ]);
         // $price = \DB::table('products')->select('price')->where('id', $request['product_id'] )->get();
         $barcode = \DB::select(\DB::raw("select id from barcodes where name = '$request->product_id'"));//product_id is the barcode name
         
         $barcode_id = $barcode[0]->id;
         $find_product = \DB::select(\DB::raw("select id, name from products where barcode_id = $barcode_id"));
-         //$Product_Out->update($request->all());
-         // $request->product_id = $find_product[0]->name;
         $product_id = $find_product[0]->id;
  
         $subtotal = $request->price * $request->qty ;
         if($request->discount > 0)
         $subtotal = $subtotal - ($subtotal* ($request->discount/100));
-        Order::create(array_merge($request->all(), ['product_id' => $product_id, 'po_no' => rand(1, 99999), 'price' => $request->price, 'refund_status' => 0, 'subtotal' => $subtotal, 'cashier' => Auth::user()->name]));
+        Order::create(array_merge($request->all(), ['product_id' => $product_id, 'po_no' => rand(1, 99999), 'price' => $request->price, 'paid_amount' => $request->paid_amount, 'balance' => $request->balance, 'mob_no' => $request->mob_no, 'refund_status' => 0, 'subtotal' => $subtotal, 'cashier' => Auth::user()->name]));
+        // Size::create($request->all());
         $product = Product::findOrFail($request->product_id);
         $product->qty -= $request->qty;
         $product->save();
@@ -136,7 +140,10 @@ class OrderController extends Controller
             'date'           => 'required',
             'order_status'   => 'required',
             'discount'       => 'required',
-
+            'paid_amount'    => 'required',
+            'balance'        => 'required',
+            'mob_no'         => 'required',
+            'size'          => 'required',
             
         ]);
 
@@ -250,6 +257,18 @@ class OrderController extends Controller
             ->addColumn('po_no', function ($order){
                 return $order->po_no;
             })
+            ->addColumn('paid_amount', function ($order){
+                return $order->paid_amount;
+            })
+            ->addColumn('balance', function ($order){
+                return $order->balance;
+            })
+            ->addColumn('size', function ($order){
+                return $order->size;
+            })    
+            ->addColumn('mob_no', function ($order){
+                return $order->mob_no;
+            })            
 
             ->addColumn('order_status', function ($order){
                 if($order->order_status == 0)
@@ -337,7 +356,7 @@ class OrderController extends Controller
         ->join('products', 'products.id', '=', 'orders.product_id')
         ->join('barcodes', 'barcodes.id', '=', 'products.barcode_id')
         // ->join('customers', 'customers.id', '=', 'product_out.customer_id')
-        ->select('products.name as product_name', 'barcodes.name as barcode_name', 'orders.subtotal', 'orders.qty', 'orders.po_no', 'orders.date', 'orders.customer_name')
+        ->select('products.name as product_name', 'barcodes.name as barcode_name', 'orders.subtotal', 'orders.qty', 'orders.po_no', 'orders.date', 'orders.customer_name','orders.mob_no','orders.paid_amount','orders.balance')
         ->whereIn('orders.id', $idst1)
         ->get();
         // dd($Product_Out);
@@ -381,6 +400,34 @@ class OrderController extends Controller
         $Product = Product::findOrFail($product_id);
         return $Product;
     }
+
+    public function checkCredit($id, $paid_amount)
+    {
+        $bc = \DB::table('barcodes')->select('id')->where('name', $id )->get();
+        $barcode_id = $bc[0]->id;
+        $find_product = \DB::select(\DB::raw("select id, price from products where barcode_id = $barcode_id"));
+        $balance = $find_product[0]->price - $paid_amount; 
+        // $find_order = \DB::select(\DB::raw("select id from products where barcode_id = $barcode_id"));
+
+        // dd(count($bc));
+        if(count($bc) > 0)
+        {
+        return response()->json([
+            'success' => true,
+            'balance' => $balance,
+            
+        ]);
+        }
+        else{
+            return response()->json([
+                'success' => false,
+                'message' => '',
+                
+            ]);
+
+        }
+        }
+
 
 
 }

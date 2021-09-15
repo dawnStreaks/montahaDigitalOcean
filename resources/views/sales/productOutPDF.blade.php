@@ -105,52 +105,30 @@
     </style>
 </head>
 <body>
-<div class="invoice-box">
+    <div align='center'>
+        <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;">
+                                                               
+        <h3>{{ $companyInfo->name }}</h3><br>
+       
+            {{ $companyInfo->address }} <br>
+            phone: +965 22253470 <br>
+    
+            Instagram:  @montahacouture <br>
+            <br>
+            <div align='left'>
+            No: {{$Product_Out[0]->po_no}}  &nbsp;&nbsp;&nbsp;Date: {{date("Y-m-d",time())}} <br>
+            </div>
+            <br>
+        <div align='left'>
+            Customer: {{$Sales_New[0]->customer_name}} <br>
+            Mobile: {{$Sales_New[0]->mob_no}}<br>
+            Delivery Date: {{$Product_Out[0]->date}}
+                                 <br>
+        </div>
+    
+        </div>
+<div class="invoice-box" style="transform: translateY(-50px);">
     <table cellpadding="0" cellspacing="0">
-             <tr class="top">
-                <td colspan="6">
-                    <table>
-                        <tr>
-                            <td><span>
-                                <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;">
-                                                           
-                                <h3>{{ $companyInfo->name }}</h3><br>
-                            </span>
-                          
-                                {{ $companyInfo->address }}
-                                                           
-                            {{ $companyInfo->email }}
-                            </td>
-                            <td></td>
-                            <td></td>
-                            
-                          
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-             
-            <tr class="information">
-                <td colspan="5">
-                    <table>
-                        <tr>
-                            
-                            <td> Order #: </td><td>{{$Product_Out[0]->po_no}}</td>
-                            <td>Dated: </td><td>{{$Product_Out[0]->date}}</td>
-                            <!-- <td> Date: </td><td>{{date("Y-m-d",time())}}</td> -->
-                            
-                            
-                            
-                            
-                            <td>
-                                {{-- {{$Product_Out[0]->customer->name}}<br>
-                                {{$Product_Out[0]->customer->address}}<br>
-                                {{$Product_Out[0]->customer->email}} 
-                            </td>--}}
-                        </tr>
-                    </table>
-                </td>
-            </tr> 
 
        
             <tr class="heading">
@@ -183,7 +161,7 @@
                 <td colspan="2">{{ $productData->product_name }} &nbsp;&nbsp; </td>
                 <td colspan="2">{{ $productData->subtotal }} x {{ $productData->qty }} &nbsp;&nbsp;</td>
                 <!-- <td></td> -->
-                <td colspan="2">{{ number_format($productData->subtotal * $productData->qty, 2, '.', '') }}</td>
+                <td colspan="2">{{ number_format($productData->subtotal * $productData->qty, 3, '.', '') }}</td>
             </tr>
             @php 
             $allTotal += $productData->subtotal * $productData->qty; 
@@ -196,11 +174,11 @@
             <tr class="total">
                 <!-- <td></td>
                 <td></td> -->
-                <td colspan="2">
+                <td colspan="3">
                     Total Items: {{number_format($total)}}
                 </td>
-                <td colspan="2">
-                   Total : {{number_format($allTotal, 2, '.', '')}} KWD
+                <td colspan="3">
+                   Total : {{number_format($allTotal, 3, '.', '')}} KWD
                 </td>
             </tr>
         </table>
@@ -314,52 +292,30 @@
     </style>
 </head>
 <body>
-<div class="invoice-box">
+    <div align='center'>
+        <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;">
+                                                               
+        <h3>{{ $companyInfo->name }}</h3><br>
+       
+            {{ $companyInfo->address }} <br>
+            phone: +965 22253470 <br>
+    
+            Instagram:  @montahacouture <br>
+            <br>
+            <div align='left'>
+            No: {{$Product_Out[0]->po_no}}  &nbsp;&nbsp;&nbsp;Date: {{date("Y-m-d",time())}} <br>
+            </div>
+            <br>
+        <div align='left'>
+            Customer: {{$Sales_New[0]->customer_name}} <br>
+            Mobile: {{$Sales_New[0]->mob_no}}<br>
+            Delivery Date: {{$Product_Out[0]->date}}
+                                 <br>
+        </div>
+    
+        </div>
+<div class="invoice-box" style="transform: translateY(-50px);">
     <table cellpadding="0" cellspacing="0">
-             <tr class="top">
-                <td colspan="6">
-                    <table>
-                        <tr>
-                            <td><span>
-                                <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;">
-                                                           
-                                <h3>{{ $companyInfo->name }}</h3><br>
-                            </span>
-                          
-                                {{ $companyInfo->address }}
-                                                           
-                            {{ $companyInfo->email }}
-                            </td>
-                            <td></td>
-                            <td></td>
-                            
-                          
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-             
-            <tr class="information">
-                <td colspan="5">
-                    <table>
-                        <tr>
-                            
-                            <td> Order #: </td><td>{{$Product_Out[0]->po_no}}</td>
-                            <td>Dated: </td><td>{{$Product_Out[0]->date}}</td>
-                            <!-- <td> Date: </td><td>{{date("Y-m-d",time())}}</td> -->
-                            
-                            
-                            
-                            
-                            <td>
-                                {{-- {{$Product_Out[0]->customer->name}}<br>
-                                {{$Product_Out[0]->customer->address}}<br>
-                                {{$Product_Out[0]->customer->email}} 
-                            </td>--}}
-                        </tr>
-                    </table>
-                </td>
-            </tr> 
 
        
             <tr class="heading">
@@ -392,7 +348,7 @@
                 <td colspan="2">{{ $productData->product_name }} &nbsp;&nbsp; </td>
                 <td colspan="2">{{ $productData->subtotal }} x {{ $productData->qty }} &nbsp;&nbsp;</td>
                 <!-- <td></td> -->
-                <td colspan="2">{{ number_format($productData->subtotal * $productData->qty, 2, '.', '') }}</td>
+                <td colspan="2">{{ number_format($productData->subtotal * $productData->qty, 3, '.', '') }}</td>
             </tr>
             @php 
             $allTotal += $productData->subtotal * $productData->qty; 
@@ -405,11 +361,11 @@
             <tr class="total">
                 <!-- <td></td>
                 <td></td> -->
-                <td colspan="2">
+                <td colspan="3">
                     Total Items: {{number_format($total)}}
                 </td>
-                <td colspan="2">
-                   Total : {{number_format($allTotal, 2, '.', '')}} KWD
+                <td colspan="3">
+                   Total : {{number_format($allTotal, 3, '.', '')}} KWD
                 </td>
             </tr>
         </table>

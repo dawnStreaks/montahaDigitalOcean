@@ -146,6 +146,7 @@ class ProductController extends Controller
         $input['image'] = $produk->image;
 
         if ($request->hasFile('image')){
+            if (file_exists(public_path($produk->image)))
             if (!$produk->image == NULL){
                 unlink(public_path($produk->image));
             }
@@ -183,6 +184,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
+        if (file_exists(public_path($product->image)))
         if (!$product->image == NULL){
             unlink(public_path($product->image));
         }

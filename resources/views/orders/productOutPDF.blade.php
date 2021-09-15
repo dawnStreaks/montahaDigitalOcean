@@ -105,65 +105,52 @@
     </style>
 </head>
 <body>
-<div class="invoice-box">
-    <table cellpadding="0" cellspacing="0">
-             <tr class="top">
-                <td colspan="6">
-                    <table>
-                        <tr>
-                            <td><span>
-                                <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;">
+    <div align='center'>
+    <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;">
                                                            
-                                <h3>{{ $companyInfo->name }}</h3><br>
-                            </span>
-                          
-                                {{ $companyInfo->address }}
-                                                           
-                            {{ $companyInfo->email }}
-                            </td>
-                            <td></td>
-                            <td></td>
-                            
-                          
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-             
-            <tr class="information">
-                <td colspan="5">
-                    <table>
-                        <tr>
-                            
-                            <td> Order #: </td><td>{{$Product_Out[0]->po_no}}</td>
-                            <td>Dated: </td><td>{{$Product_Out[0]->date}}</td>
-                            <!-- <td> Date: </td><td>{{date("Y-m-d",time())}}</td> -->
-                            
-                            
-                            
-                            
-                            <td>
-                                {{-- {{$Product_Out[0]->customer->name}}<br>
-                                {{$Product_Out[0]->customer->address}}<br>
-                                {{$Product_Out[0]->customer->email}} 
-                            </td>--}}
-                        </tr>
-                    </table>
-                </td>
-            </tr> 
+    <h3>{{ $companyInfo->name }}</h3><br>
+   
+        {{ $companyInfo->address }} <br>
+        phone: +965 22253470 <br>
 
-       
-            <tr class="heading">
+        Instagram:  @montahacouture <br>
+        <br>
+        <div align='left'>
+        No: {{$Product_Out[0]->po_no}}  &nbsp;&nbsp;&nbsp;Date: {{date("Y-m-d",time())}} <br>
+        </div>
+        <br>
+    <div align='left'>
+        Customer: {{$Product_Out[0]->customer_name}} <br>
+        Mobile: {{$Product_Out[0]->mob_no}}<br>
+        Delivery Date: {{$Product_Out[0]->date}}
+                             <br>
+    </div>
+
+    </div>
+<div class="invoice-box" style="transform: translateY(-50px);">
+    <table cellpadding="0" cellspacing="0">
+
+         <tr class="heading">
+                {{-- <td colspan="2">id</td> --}}
+
                 <td colspan="2">Name</td>
                 <td colspan="2">Price</td>
                 <!-- <td></td> -->
                 <td colspan="2">Subtotal</td>
+                {{-- <td colspan="1">Paid </td>
+                <td colspan="1">Credit </td> --}}
+
+
             </tr>
+       
 
             @php 
             $total = count($Product_Out); 
             $i=1;
             $allTotal = 0;
+            $credit = 0;
+            $paid_amount = 0;
+
             @endphp
 
             @foreach($Product_Out as $productData)
@@ -183,9 +170,12 @@
                 <td colspan="2">{{ $productData->product_name }} &nbsp;&nbsp; </td>
                 <td colspan="2">{{ $productData->subtotal }} x {{ $productData->qty }} &nbsp;&nbsp;</td>
                 <!-- <td></td> -->
-                <td colspan="2">{{ number_format($productData->subtotal * $productData->qty, 2, '.', '') }}</td>
+                <td colspan="2">{{ number_format($productData->subtotal * $productData->qty, 3, '.', '') }}</td>
+               
             </tr>
             @php 
+            $credit += $productData->balance;
+            $paid_amount += $productData->paid_amount;
             $allTotal += $productData->subtotal * $productData->qty; 
             @endphp
             @endforeach
@@ -194,19 +184,29 @@
             <br>
 
             <tr class="total">
-                <!-- <td></td>
-                <td></td> -->
-                <td colspan="2">
+               <br><br>
+                <td colspan="3">
                     Total Items: {{number_format($total)}}
                 </td>
-                <td colspan="2">
-                   Total : {{number_format($allTotal, 2, '.', '')}} KWD
+            </tr>
+            <tr>
+                <td colspan="3">
+                   Total: {{number_format($allTotal, 3, '.', '')}} KD
                 </td>
             </tr>
+            <tr>
+                <td colspan="1">Credit: &nbsp; </td><td colspan="1">{{ number_format($credit, 3, '.', '') }}KD </td>
+            </tr>
+            <tr>
+                <td colspan="1">Paid: </td><td colspan="1">{{ number_format($paid_amount, 3, '.', '') }}KD </td>
+            </tr>
+          
         </table>
     </div>
 </body>
-</html><!doctype html>
+</html>
+
+<!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -313,65 +313,52 @@
     </style>
 </head>
 <body>
-<div class="invoice-box">
-    <table cellpadding="0" cellspacing="0">
-             <tr class="top">
-                <td colspan="6">
-                    <table>
-                        <tr>
-                            <td><span>
-                                <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;">
+    <div align='center'>
+    <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;">
                                                            
-                                <h3>{{ $companyInfo->name }}</h3><br>
-                            </span>
-                          
-                                {{ $companyInfo->address }}
-                                                           
-                            {{ $companyInfo->email }}
-                            </td>
-                            <td></td>
-                            <td></td>
-                            
-                          
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-             
-            <tr class="information">
-                <td colspan="5">
-                    <table>
-                        <tr>
-                            
-                            <td> Order #: </td><td>{{$Product_Out[0]->po_no}}</td>
-                            <td>Dated: </td><td>{{$Product_Out[0]->date}}</td>
-                            <!-- <td> Date: </td><td>{{date("Y-m-d",time())}}</td> -->
-                            
-                            
-                            
-                            
-                            <td>
-                                {{-- {{$Product_Out[0]->customer->name}}<br>
-                                {{$Product_Out[0]->customer->address}}<br>
-                                {{$Product_Out[0]->customer->email}} 
-                            </td>--}}
-                        </tr>
-                    </table>
-                </td>
-            </tr> 
+    <h3>{{ $companyInfo->name }}</h3><br>
+   
+        {{ $companyInfo->address }} <br>
+        phone: +965 22253470 <br>
 
-       
-            <tr class="heading">
+        Instagram:  @montahacouture <br>
+        <br>
+        <div align='left'>
+        No: {{$Product_Out[0]->po_no}}  &nbsp;&nbsp;&nbsp;Date: {{date("Y-m-d",time())}} <br>
+        </div>
+        <br>
+    <div align='left'>
+        Customer: {{$Product_Out[0]->customer_name}} <br>
+        Mobile: {{$Product_Out[0]->mob_no}}<br>
+        Delivery Date: {{$Product_Out[0]->date}}
+                             <br>
+    </div>
+
+    </div>
+<div class="invoice-box" style="transform: translateY(-50px);">
+    <table cellpadding="0" cellspacing="0">
+
+         <tr class="heading">
+                {{-- <td colspan="2">id</td> --}}
+
                 <td colspan="2">Name</td>
                 <td colspan="2">Price</td>
                 <!-- <td></td> -->
                 <td colspan="2">Subtotal</td>
+                {{-- <td colspan="1">Paid </td>
+                <td colspan="1">Credit </td> --}}
+
+
             </tr>
+       
 
             @php 
             $total = count($Product_Out); 
             $i=1;
             $allTotal = 0;
+            $credit = 0;
+            $paid_amount = 0;
+
             @endphp
 
             @foreach($Product_Out as $productData)
@@ -390,10 +377,13 @@
             <tr class="item {{$tr}}">
                 <td colspan="2">{{ $productData->product_name }} &nbsp;&nbsp; </td>
                 <td colspan="2">{{ $productData->subtotal }} x {{ $productData->qty }} &nbsp;&nbsp;</td>
-                <!-- <td></td> -->
                 <td colspan="2">{{ number_format($productData->subtotal * $productData->qty, 2, '.', '') }}</td>
+               
             </tr>
             @php 
+            $credit += $productData->balance;
+            $paid_amount += $productData->paid_amount;
+         
             $allTotal += $productData->subtotal * $productData->qty; 
             @endphp
             @endforeach
@@ -402,15 +392,23 @@
             <br>
 
             <tr class="total">
-                <!-- <td></td>
-                <td></td> -->
-                <td colspan="2">
+               <br><br>
+                <td colspan="3">
                     Total Items: {{number_format($total)}}
                 </td>
-                <td colspan="2">
-                   Total : {{number_format($allTotal, 2, '.', '')}} KWD
+            </tr>
+            <tr>
+                <td colspan="3">
+                   Total : {{number_format($allTotal, 3, '.', '')}} KD
                 </td>
             </tr>
+            <tr>
+                <td colspan="1">Credit &nbsp; </td><td colspan="1">{{ number_format($credit, 3, '.', '') }}KD </td>
+            </tr>
+            <tr>
+                <td colspan="1">Paid </td><td colspan="1">{{ number_format($paid_amount, 3, '.', '') }}KD </td>
+            </tr>
+          
         </table>
     </div>
 </body>

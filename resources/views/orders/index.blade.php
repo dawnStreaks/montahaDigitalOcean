@@ -69,15 +69,19 @@
                     <th>ID</th>
                     <th>Products</th>
                     <th>Price</th>
+                    <th>Paid Amount</th>
+                    <th>Credit</th>
                     <th>Qty</th>
                     <th>Discount</th>
-                    <th>Subtotal</th>
+                    {{-- <th>Subtotal</th> --}}
                     <th>Date</th>
                     <th>PO_No</th>
                     <th>Customer Name</th>
+                    <th>Mobile No</th>
+                    {{-- <th>Size</th> --}}
                     <th>Order Status</th>
                     <th>Refund Status</th>
-                    <th> Cashier </th>
+                    {{-- <th> Cashier </th> --}}
                     <th></th>
 
                 </tr>
@@ -156,15 +160,19 @@
                 {data: 'id', name: 'id'},
                 {data: 'products_name', name: 'products_name'},
                 {data: 'price', name: 'price'},
+                {data: 'paid_amount', name: 'paid_amount'},
+                {data: 'balance', name: 'balance'},
                 {data: 'qty', name: 'qty'},
                 {data: 'discount', name: 'discount'},
-                {data: 'subtotal', name: 'subtotal'},
+                // {data: 'subtotal', name: 'subtotal'},
                 {data: 'date', name: 'date'},
                 {data: 'po_no', name: 'po_no'},
                 {data: 'customer_name', name: 'customer_name'},
+                {data: 'mob_no', name: 'mob_no'},
+                // {data: 'size', name: 'size'},
                 {data: 'order_status', name: 'order_status'},
                 {data: 'refund_status', name: 'refund_status'},
-                {data: 'cashier', name: 'cashier'},
+                // {data: 'cashier', name: 'cashier'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ]
         });
@@ -194,6 +202,11 @@ $('#refresh').click(function(){
         $(document).on("change","#product_id",function(){
             checkAvailable(this.value);
         });
+
+        $(document).on("change","#paid_amount",function(){
+            checkCredit($(product_id).val(), this.value);
+        });
+
         $('.input-daterange').datepicker({
          todayBtn:'linked',
          format:'yyyy-mm-dd',
@@ -220,6 +233,19 @@ $('#refresh').click(function(){
                     $('#discount').val(data.discount);
                     $('#price').val(data.price);
                     $('#date').val(data.date);
+                    $('#paid_amount').val(data.paid_amount);
+                    $('#balance').val(data.balance);
+                    $('#shoulder').val(data.shoulder);
+                    $('#bust').val(data.bust);
+                    $('#sleeve_conference').val(data.sleeve_conference);
+                    $('#sleeve_length').val(data.sleeve_length);
+                    $('#sldc').val(data.sldc);
+                    $('#waist_line').val(data.waist_line);
+                    $('#hips').val(data.hips);
+                    $('#length').val(data.length);
+                    $('#arm_hole').val(data.length);
+
+
                 },
                 error : function() {
                     alert("Nothing Data");
@@ -237,6 +263,20 @@ $('#refresh').click(function(){
                     $('#available').text(data.qty);
                     $('#productName').text(data.name);
                     $('#price').val(data.price);
+
+                }
+            });
+        }
+
+        function checkCredit(id, paid_amount) {
+            $.ajax({
+                url: "{{ url('checkCredit') }}" + '/' + id + '/' + paid_amount,
+                type: "GET",
+                dataType: "JSON",
+                success: function(data) {
+                    $('#balance').val(data.balance);
+                    // $('#productName').text(data.name);
+                    // $('#price').val(data.price);
 
                 }
             });

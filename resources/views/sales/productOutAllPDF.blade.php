@@ -40,7 +40,7 @@
 </style>
 
 
-<div class="invoice-box">
+<div class="invoice-box" style="transform: translateY(-50px);">
     <table cellpadding="0" cellspacing="0">
             <tr class="top">
                 <td colspan="5">
@@ -107,7 +107,7 @@
             <td>{{ $p->product->name }}</td>
             <td>{{ $p->price }}</td>
             <td>{{ $p->qty }}</td>
-            <td>{{ number_format($p->price * $p->qty, 2, '.', '') }}</td>
+            <td>{{ number_format($p->price * $p->qty, 3, '.', '') }}</td>
             <td>{{ $p->date }}</td>
         </tr>
         </tbody>

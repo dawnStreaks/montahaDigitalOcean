@@ -27,17 +27,111 @@
                             {{-- <span class="text-danger"><span id="productName"></span> currently number <span id="available">0</span>.</span> --}}
                             <span class="help-block with-errors"></span>
                         </div>
-
-
-                        <div class="form-group">
-                            <label>Customer Name & Phone No</label>
+                        <table>
+                            <tr>
+                                <td>
+                        <div class="form-group col">
+                            <label>Customer Name </label>
                             <input type="text" class="form-control" id="customer_name" name="customer_name" required>
                             <span class="help-block with-errors"></span>
                         </div>
+                                </td>
+                                &nbsp;
+                                <td>
+                        <div class="form-group col">
+                            <label>Mobile No</label>
+                            <input type="text" class="form-control" id="mob_no" name="mob_no" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </td>
+                    </tr>
+                    </table>
 
+                    <table>
+                        <tr>
+                           <td>
+                        <div class="form-group">
+                            <label>Shoulder</label>
+                            <input type="text" class="form-control" id="shoulder" name="shoulder" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Bust</label>
+                            <input type="text" class="form-control" id="bust" name="bust" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Sleeve Conference</label>
+                            <input type="text" class="form-control" id="sleeve_conference" name="sleeve_conference" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Arm Hole</label>
+                            <input type="text" class="form-control" id="arm_hole" name="arm_hole" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </td>
+                
+                    <td>
+                        <div class="form-group">
+                            <label>SLDC</label>
+                            <input type="text" class="form-control" id="sldc" name="sldc" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Sleeve Length</label>
+                            <input type="text" class="form-control" id="sleeve_length" name="sleeve_length" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label>Waist Line</label>
+                            <input type="text" class="form-control" id="waist_line" name="waist_line" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Hips</label>
+                            <input type="text" class="form-control" id="hips" name="hips" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label>Length</label>
+                            <input type="text" class="form-control" id="length" name="length" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                    </td>
+                    </tr>
+                    </table>
                         <div class="form-group">
                             <label>Price</label>
                             <input type="text" class="form-control" id="price" name="price" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Paid Amount</label>
+                            <input type="text" class="form-control" id="paid_amount" name="paid_amount" required>
+                            <span class="help-block with-errors"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Credit</label>
+                            <input type="text" class="form-control" id="balance" name="balance" required>
                             <span class="help-block with-errors"></span>
                         </div>
 

@@ -100,6 +100,8 @@ class SaleController extends Controller
         $input['product_id'] = $find_product[0]->id;
         $input['price'] = $find_product[0]->price;
         $input['customer_id'] = 3;
+        $input['customer_name'] = "";
+        $input['mob_no'] = "";
         $input['po_no'] = $i++;
         $input['qty'] = 1;
         $input['discount'] = 0;
@@ -158,8 +160,10 @@ class SaleController extends Controller
         $this->validate($request, [
             'product_id'     => 'required',
             'price'          => 'required',
-            'discount'            => 'required',
+            'discount'       => 'required',
             'qty'            => 'required',
+            // 'customer_name'  => 'required',
+            // 'mob_no'         => 'required',
             'date'           => 'required'
         ]);
 
@@ -168,7 +172,7 @@ class SaleController extends Controller
           $subtotal = $request->price * $request->qty ;
           if($request->discount > 0)
             $subtotal = $subtotal - ($subtotal* ($request->discount/100));
-      
+    //   var_dump($request->all());
         $Temp_Sale->update(array_merge($request->all(), ['subtotal' => $subtotal]));
 
         $product = Product::findOrFail($request->product_id);
@@ -297,22 +301,18 @@ class SaleController extends Controller
         $temp_sales = Temp_Sale::all();
         $total_amount = \DB::select(\DB::raw("select SUM((price - (price * (discount/100))) * qty) as sum from temp_sales "));
         //  dd($total_amount[0]->sum);// foreach($temp_sales as $object));
-        
+        // var_dump($temp_sales);
+
             $input['po_no'] = rand(1, 99999);
             $input['total_amount'] = $total_amount[0]->sum;
             $input['date'] = date("Y/m/d");
             $input['customer_id'] = 3;
+            $input['customer_name'] = isset( $temp_sales[0]->customer_name )?$temp_sales[0]->customer_name:'';
+            $input['mob_no'] =isset( $temp_sales[0]->mob_no )?$temp_sales[0]->mob_no:'';
             $input['cashier'] = Auth::user()->name;
             $input['refund_status'] = 0;
-
-
-        // 'invoice_link' => "/sales"
-    // ]);
-        Sale_New::create($input);
-        // $this->exportProductOutAll();
-        // foreach($temp_sales as $object)
-        // {
-            
+            Sale_New::create($input);
+           
             $arrays[] = $temp_sales->toArray();
             // print_r($arrays);
             foreach($arrays[0] as $item)
@@ -321,10 +321,8 @@ class SaleController extends Controller
           
                 $test['po_no'] = $input['po_no'];
                 $test['product_id'] = $item['product_id'];
-                
                 $test['price'] = $item['price'];
-                
-                
+                          
                 $test['qty'] = $item['qty'];
                 $test['date'] = $item['date'];
                 $test['refund_status'] = 0;
@@ -340,19 +338,11 @@ class SaleController extends Controller
                 $test['cashier'] = Auth::user()->name;
                 $test['customer_id'] = 3;
 
-
-
-                
+              
                Product_Out::insert($test);
                $product = Product::findOrFail($item['product_id']);
                $product->qty -= $item['qty'];
                $product->save();
-
-                // print_r($test);
-
-
-            // }
-
 
            }
 
@@ -367,18 +357,12 @@ class SaleController extends Controller
             ->get();
         
         $companyInfo = Company::find(1);
+        $Sales_New = \DB::table('sales_new')
+        ->where('po_no', $input['po_no'] )
+        ->get();
 
-    //    dd($Product_Out);
 
-        // $pdf = PDF::setOptions([
-        //     'images' => true,
-        //     'isHtml5ParserEnabled' => true, 
-        //     'isRemoteEnabled' => true
-        // ])->loadView('sales.productOutPDF', compact('Product_Out', 'companyInfo'))->setPaper('a4', 'portrait')->stream('test.pdf');
-        // // $pdf->download(date("Y-m-d H:i:s",time()).'_Product_Out.pdf');
-        // $pdf = PDF::loadView('sales.productOutPDF', compact('Product_Out', 'companyInfo'));
-        // $pdf->stream('my.pdf',array('Attachment'=>0));
-        $view = view('sales.productOutPDF', compact('Product_Out', 'companyInfo'))->render();
+        $view = view('sales.productOutPDF', compact('Product_Out', 'companyInfo', 'Sales_New'))->render();
 
         // return view('sales.productOutPDF', compact('Product_Out', 'companyInfo'))->render();    
         return response()->json([
