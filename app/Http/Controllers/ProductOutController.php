@@ -205,7 +205,7 @@ class ProductOutController extends Controller
         {
          
         // $subtotal =  \DB::select(\DB::raw("SELECT subtotal FROM Orders WHERE OrderDate BETWEEN $request->from_date AND $request->to_date"));
-        $subtotal =  Product_Out::whereBetween('date', array($request->from_date, $request->to_date))->sum('subtotal');
+        $subtotal =  Product_Out::whereBetween('date', array($request->from_date, $request->to_date))->where('customer_id','!=',3)->sum('subtotal');
         // var_dump($subtotal);
         }
         else
@@ -226,12 +226,12 @@ class ProductOutController extends Controller
         // $refund = Refund::all();
         if(!empty($request->from_date))
         {
-            $product = Product_Out::whereBetween('date', array($request->from_date, $request->to_date))->get();
+            $product = Product_Out::whereBetween('date', array($request->from_date, $request->to_date))->where('customer_id','!=',3)->get();
       
         }
         else
         {
-            $product = Product_Out::all();
+            $product = Product_Out::where('customer_id','!=',3)->get();
                
 
         }
