@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
 @endsection
 @section('header') Invoice @endsection
-@section('description') This page about  all your invoice @endsection
+@section('description') This page is about invoices for all your Sales(POS) @endsection
 
 @section('top')
 @endsection

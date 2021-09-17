@@ -13,7 +13,7 @@
 @endsection
 
 @section('header') Products In @endsection
-@section('description') This page about your all products in @endsection
+@section('description') This page is for adding new stock for existing products @endsection
 
 @section('top')
 @endsection

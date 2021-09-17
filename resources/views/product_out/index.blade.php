@@ -14,7 +14,7 @@
 @endsection
 
 @section('header') Products Out @endsection
-@section('description') This page about your all products out @endsection
+@section('description') This page is about all the products sold to Qatar outlets @endsection
 
 @section('top')
 @endsection
