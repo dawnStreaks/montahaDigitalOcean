@@ -274,7 +274,7 @@ function getSubtotalSum(from_date, to_date) {
                     $('.modal-title').text('Edit Sales');
 
                     $('#id').val(data.id);
-                    $('#customer_id').val(data.customer_id);
+                    $('#customer_name').val(data.customer_name);
                      $('#total_amount').val(data.total_amount);
                     $('#date').val(data.date);
                 },

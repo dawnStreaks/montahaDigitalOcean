@@ -60,7 +60,7 @@ class SaleController1 extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'customer_id'      => 'required',
+            'customer_name'      => 'required',
             'total_amount'    => 'required',
             'date'     => 'required',
         ]);
@@ -109,7 +109,7 @@ class SaleController1 extends Controller
         $sale = Sale_New::findOrFail($id);
 
         $this->validate($request, [
-            'customer_id'      => 'required',
+            'customer_name'      => 'required',
             'total_amount'    => 'required',
             'date'     => 'required',
         ]);
@@ -175,7 +175,7 @@ class SaleController1 extends Controller
 
         return Datatables::of($sales)
         ->addColumn('customer_name', function ($sales){
-            return $sales->customer->name;
+            return $sales->customer_name;
         })
         ->addColumn('cashier', function ($sales){
             return $sales->cashier;

@@ -211,7 +211,7 @@ class ProductOutController extends Controller
         else
         {
                 
-        $subtotal = Product_Out::sum('subtotal');
+        $subtotal = Product_Out::where('customer_id','!=',3)->sum('subtotal');
                 //  var_dump($subtotal_sum);
         }
 

@@ -116,13 +116,13 @@
             Instagram:  @montahacouture <br>
             <br>
             <div align='left'>
-            No: {{$Product_Out[0]->po_no}}  &nbsp;&nbsp;&nbsp;Date: {{date("Y-m-d",time())}} <br>
+            No: {{$Product_Out[0]->po_no}}  &nbsp;&nbsp;&nbsp;Date: {{date("d/m/Y",time())}} <br>
             </div>
             <br>
         <div align='left'>
             Customer: {{$Sales_New[0]->customer_name}} <br>
             Mobile: {{$Sales_New[0]->mob_no}}<br>
-            Delivery Date: {{$Product_Out[0]->date}}
+            Delivery Date: {{date("d/m/Y", strtotime($Product_Out[0]->date))}}
                                  <br>
         </div>
     
@@ -304,14 +304,13 @@
     
             Instagram:  @montahacouture <br>
             <div align='left'>
-            No: {{$Product_Out[0]->po_no}}  &nbsp;&nbsp;&nbsp;Date: {{date("Y-m-d",time())}} <br>
+            No: {{$Product_Out[0]->po_no}}  &nbsp;&nbsp;&nbsp;Date: {{date("d/m/Y",time())}} <br>
             </div>
             <br>
         <div align='left'>
             Customer: {{$Sales_New[0]->customer_name}} <br>
             Mobile: {{$Sales_New[0]->mob_no}}<br>
-            Delivery Date: {{$Product_Out[0]->date}}
-                                 <br>
+            Delivery Date: {{date("d/m/Y", strtotime($Product_Out[0]->date))}}                                 <br>
         </div>
     
         </div>

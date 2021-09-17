@@ -14,7 +14,7 @@
 
 @section('header')
 {{-- <img src="{{ asset('upload/logo/logo.jpeg') }}" alt="logo" style="width:100%; width:50px;/> --}}
-  <h1>Montaha Couture</h1> @endsection
+  <h1>MONTAHA ALAJEEL</h1> @endsection
 @section('description') Point of Sale @endsection
 
 @section('top')
