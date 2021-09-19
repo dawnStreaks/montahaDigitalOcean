@@ -226,18 +226,23 @@ class OrderController extends Controller
          
         // $subtotal =  \DB::select(\DB::raw("SELECT subtotal FROM Orders WHERE OrderDate BETWEEN $request->from_date AND $request->to_date"));
         $subtotal =  Order::whereBetween('date', array($request->from_date, $request->to_date))->sum('subtotal');
+        $paid_amount =  Order::whereBetween('date', array($request->from_date, $request->to_date))->sum('paid_amount');
+
         // var_dump($subtotal);
         }
         else
         {
                 
                  $subtotal = Order::sum('subtotal');
+                 $paid_amount = Order::sum('paid_amount');
+
                 //  var_dump($subtotal_sum);
         }
 
         return response()->json([
             'success'    => true,
-            'data'    => $subtotal //[0]->subtotal
+            'subtotal'    => $subtotal, //[0]->subtotal
+            'paid'    => $paid_amount,
         ]);
         }
     public function apiOrders(Request $request){

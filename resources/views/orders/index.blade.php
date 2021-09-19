@@ -47,13 +47,26 @@
                     <div class="col-md-3">
                         <input type="text" name="to_date" id="to_date" class="form-control" placeholder="To Date" readonly />
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <button type="submit" value="Submit" name="filter" id="filter" class="btn btn-primary">Filter</button>
                         <button type="button" name="refresh" id="refresh" class="btn btn-default">Refresh</button>
                     </div>
-                    <b> Subtotal </b>
-                    <div id="subtotal" class="col-md-3">
-                        
+
+                    <div  class="col-md-1">
+                        <b> Subtotal: </b>
+
+                    </div>
+                    <div id="subtotal" class="col-md-1">
+
+                    </div>
+
+
+                    <div class="col-md-1">
+                        <b> Paid: </b>
+
+                    </div>
+                    <div id="paid" class="col-md-1">
+
                     </div>
                 </div>
             </form>
@@ -292,8 +305,10 @@ $('#refresh').click(function(){
                 type: "GET",
                 dataType: "JSON",
                 success: function(data) {
-                    $('#subtotal').text(data.data);
-                    console.log(data);
+                    $('#subtotal').text(data.subtotal);
+                    $('#paid').text(data.paid);
+
+                    // console.log(data.paid);
                     // $('#productName').text(data.name);
                     // $('#price').val(data.price);
 
