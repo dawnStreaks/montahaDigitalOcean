@@ -14,7 +14,7 @@ use PDF;
 use Illuminate\Support\Facades\Response as FacadeResponse;
 use Auth;
 use App\User;
-use App\Size;
+// use App\Size;
 use App\Order;
 
 class OrderController extends Controller
@@ -89,6 +89,7 @@ class OrderController extends Controller
         $subtotal = $subtotal - ($subtotal* ($request->discount/100));
         Order::create(array_merge($request->all(), ['product_id' => $product_id, 'po_no' => rand(1, 99999), 'price' => $request->price, 'paid_amount' => $request->paid_amount, 'balance' => $request->balance, 'mob_no' => $request->mob_no, 'refund_status' => 0, 'subtotal' => $subtotal, 'cashier' => Auth::user()->name]));
         // Size::create($request->all());
+       
         $product = Product::findOrFail($request->product_id);
         $product->qty -= $request->qty;
         $product->save();
@@ -119,7 +120,10 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
+        
         $Product_Out = Order::find($id);
+        $Product_Out['barcode'] = $Product_Out->product->barcode->name;
+
         return $Product_Out;
     }
 
@@ -143,25 +147,30 @@ class OrderController extends Controller
             'paid_amount'    => 'required',
             'balance'        => 'required',
             'mob_no'         => 'required',
-            'size'          => 'required',
             
         ]);
+
+        
 
         $order = Order::findOrFail($id);
         $subtotal = $request->price * $request->qty ;
 
           if($request->discount > 0)
             $subtotal = $subtotal - ($subtotal* ($request->discount/100));
-        
-        $order->update(array_merge($request->all(), ['subtotal' => $subtotal, 'cashier' => Auth::user()->name]));
-
-        $product = Product::findOrFail($request->product_id);
-        $product->qty -= $request->qty;
-        $product->update();
+            $barcode = \DB::select(\DB::raw("select id from barcodes where name = '$request->product_id'"));//product_id is the barcode name
+            $barcode_id = $barcode[0]->id;
+            $find_product = \DB::select(\DB::raw("select id, price from products where barcode_id = $barcode_id"));
+            $product_id = $find_product[0]->id;
+            $price = $find_product[0]->price;
+            $credit= $price - $request->paid_amount;
+            $order->update(array_merge($request->all(), ['subtotal' => $subtotal, 'cashier' => Auth::user()->name, 'product_id' => $product_id, 'price' => $price, 'balance' => $credit]));
+            $product = Product::findOrFail($product_id);
+            $product->qty -= $request->qty;
+            $product->update();
 
         return response()->json([
             'success'    => true,
-            'message'    => 'Product Out Updated'
+            'message'    => 'Order Updated'
         ]);
     }
 
@@ -263,9 +272,9 @@ class OrderController extends Controller
             ->addColumn('balance', function ($order){
                 return $order->balance;
             })
-            ->addColumn('size', function ($order){
-                return $order->size;
-            })    
+            // ->addColumn('size', function ($order){
+            //     return $order->size;
+            // })    
             ->addColumn('mob_no', function ($order){
                 return $order->mob_no;
             })            

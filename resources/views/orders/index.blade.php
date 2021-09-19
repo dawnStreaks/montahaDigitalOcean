@@ -201,6 +201,9 @@ $('#refresh').click(function(){
 
         $(document).on("change","#product_id",function(){
             checkAvailable(this.value);
+            // checkCredit($(product_id).val(), this.value);
+
+
         });
 
         $(document).on("change","#paid_amount",function(){
@@ -226,8 +229,9 @@ $('#refresh').click(function(){
                     $('#modal-form').modal('show');
                     $('.modal-title').text('Edit Orders');
                     $('#id').val(data.id);
-                    $('#product_id').val(data.product_id);
+                    $('#product_id').val(data.barcode);
                     $('#customer_name').val(data.customer_name);
+                    $('#mob_no').val(data.mob_no);
                     $('#qty').val(data.qty);
                     $('#order_status').val(data.order_status);
                     $('#discount').val(data.discount);
