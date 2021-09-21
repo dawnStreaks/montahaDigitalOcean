@@ -86,7 +86,7 @@
                     <th>Credit</th>
                     <th>Qty</th>
                     <th>Discount</th>
-                    {{-- <th>Subtotal</th> --}}
+                    <th>Subtotal</th>
                     <th>Date</th>
                     <th>PO_No</th>
                     <th>Customer Name</th>
@@ -177,7 +177,7 @@
                 {data: 'balance', name: 'balance'},
                 {data: 'qty', name: 'qty'},
                 {data: 'discount', name: 'discount'},
-                // {data: 'subtotal', name: 'subtotal'},
+                {data: 'subtotal', name: 'subtotal'},
                 {data: 'date', name: 'date'},
                 {data: 'po_no', name: 'po_no'},
                 {data: 'customer_name', name: 'customer_name'},
@@ -249,6 +249,7 @@ $('#refresh').click(function(){
                     $('#order_status').val(data.order_status);
                     $('#discount').val(data.discount);
                     $('#price').val(data.price);
+                    $('#subtotal').val(data.subtotal);
                     $('#date').val(data.date);
                     $('#paid_amount').val(data.paid_amount);
                     $('#balance').val(data.balance);
