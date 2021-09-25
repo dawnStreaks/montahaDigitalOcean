@@ -78,7 +78,8 @@
             <table id="orders-table" class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Multiple Export Invoice</th>
+                    <th>Date</th>
+
                     <th>ID</th>
                     <th>Products</th>
                     <th>Price</th>
@@ -87,13 +88,14 @@
                     <th>Qty</th>
                     <th>Discount</th>
                     <th>Subtotal</th>
-                    <th>Date</th>
                     <th>PO_No</th>
                     <th>Customer Name</th>
                     <th>Mobile No</th>
                     {{-- <th>Size</th> --}}
                     <th>Order Status</th>
                     <th>Refund Status</th>
+                    <th>Multiple Export Invoice</th>
+
                     {{-- <th> Cashier </th> --}}
                     <th></th>
 
@@ -169,7 +171,8 @@
                 }
                 },
                        columns: [
-                {data: 'multiple_export', name: 'multiple_export'},
+                        {data: 'date', name: 'date'},
+
                 {data: 'id', name: 'id'},
                 {data: 'products_name', name: 'products_name'},
                 {data: 'price', name: 'price'},
@@ -178,13 +181,15 @@
                 {data: 'qty', name: 'qty'},
                 {data: 'discount', name: 'discount'},
                 {data: 'subtotal', name: 'subtotal'},
-                {data: 'date', name: 'date'},
+                
                 {data: 'po_no', name: 'po_no'},
                 {data: 'customer_name', name: 'customer_name'},
                 {data: 'mob_no', name: 'mob_no'},
                 // {data: 'size', name: 'size'},
                 {data: 'order_status', name: 'order_status'},
                 {data: 'refund_status', name: 'refund_status'},
+                {data: 'multiple_export', name: 'multiple_export'},
+
                 // {data: 'cashier', name: 'cashier'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ]
