@@ -80,7 +80,6 @@
                 <tr>
                     <th>Date</th>
 
-                    <th>ID</th>
                     <th>Products</th>
                     <th>Price</th>
                     <th>Paid Amount</th>
@@ -94,6 +93,8 @@
                     {{-- <th>Size</th> --}}
                     <th>Order Status</th>
                     <th>Refund Status</th>
+                    <th>ID</th>
+
                     <th>Multiple Export Invoice</th>
 
                     {{-- <th> Cashier </th> --}}
@@ -173,7 +174,6 @@
                        columns: [
                         {data: 'date', name: 'date'},
 
-                {data: 'id', name: 'id'},
                 {data: 'products_name', name: 'products_name'},
                 {data: 'price', name: 'price'},
                 {data: 'paid_amount', name: 'paid_amount'},
@@ -188,6 +188,7 @@
                 // {data: 'size', name: 'size'},
                 {data: 'order_status', name: 'order_status'},
                 {data: 'refund_status', name: 'refund_status'},
+                {data: 'id', name: 'id'},
                 {data: 'multiple_export', name: 'multiple_export'},
 
                 // {data: 'cashier', name: 'cashier'},
