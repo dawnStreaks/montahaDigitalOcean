@@ -156,7 +156,9 @@
                 {data: 'refund_status', name: 'refund_status'},
                 {data: 'cashier', name: 'cashier'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
-            ]
+            ],
+            order: [ [0, 'desc'] ]
+
         });
         $( "#filter-form" ).submit(function( event ) {
           event.preventDefault();

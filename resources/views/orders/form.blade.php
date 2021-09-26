@@ -150,7 +150,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Discount %</label>
+                            <label>Discount </label>
                         <input type="number" value="0" min="0" max="100" id="discount" name="discount" step="1"/>
                         <span class="help-block with-errors"></span>
                         </div>

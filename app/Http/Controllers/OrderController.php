@@ -86,7 +86,9 @@ class OrderController extends Controller
  
         $subtotal = $request->price * $request->qty ;
         if($request->discount > 0)
-        $subtotal = $subtotal - ($subtotal* ($request->discount/100));
+         $subtotal = $subtotal - $request->discount;
+
+        // $subtotal = $subtotal - ($subtotal* ($request->discount/100));
         Order::create(array_merge($request->all(), ['product_id' => $product_id, 'po_no' => rand(1, 99999), 'price' => $request->price, 'paid_amount' => $request->paid_amount, 'balance' => $request->balance, 'mob_no' => $request->mob_no, 'refund_status' => 0, 'subtotal' => $subtotal, 'cashier' => Auth::user()->name]));
         // Size::create($request->all());
        
@@ -156,7 +158,9 @@ class OrderController extends Controller
         $subtotal = $request->price * $request->qty ;
 
           if($request->discount > 0)
-            $subtotal = $subtotal - ($subtotal* ($request->discount/100));
+          $subtotal = $subtotal - $request->discount;
+
+            // $subtotal = $subtotal - ($subtotal* ($request->discount/100));
             $barcode = \DB::select(\DB::raw("select id from barcodes where name = '$request->product_id'"));//product_id is the barcode name
             $barcode_id = $barcode[0]->id;
             $find_product = \DB::select(\DB::raw("select id, price from products where barcode_id = $barcode_id"));
@@ -186,7 +190,9 @@ class OrderController extends Controller
         $subtotal = $Product_Out->price * $Product_Out->qty ; //in case refund amount is included, 
 
           if($Product_Out->discount > 0)
-            $subtotal = $subtotal - ($subtotal* ($Product_Out->discount/100));
+          $subtotal = $subtotal - $Product_Out->discount;
+
+            // $subtotal = $subtotal - ($subtotal* ($Product_Out->discount/100));
         
         $Product_Out->update(['subtotal' => $subtotal, 'cashier' => Auth::user()->name, 'refund_status' => $refund_status]);
 
@@ -225,8 +231,8 @@ class OrderController extends Controller
         {
          
         // $subtotal =  \DB::select(\DB::raw("SELECT subtotal FROM Orders WHERE OrderDate BETWEEN $request->from_date AND $request->to_date"));
-        $subtotal =  Order::whereBetween('date', array($request->from_date, $request->to_date))->sum('subtotal');
-        $paid_amount =  Order::whereBetween('date', array($request->from_date, $request->to_date))->sum('paid_amount');
+        $subtotal =  Order::whereBetween('created_at', array($request->from_date, $request->to_date))->sum('subtotal');
+        $paid_amount =  Order::whereBetween('created_at', array($request->from_date, $request->to_date))->sum('paid_amount');
 
         // var_dump($subtotal);
         }
@@ -250,7 +256,7 @@ class OrderController extends Controller
 
         if(!empty($request->from_date))
         {
-         $order = Order::whereBetween('date', array($request->from_date, $request->to_date))
+         $order = Order::whereBetween('created_at', array($request->from_date, $request->to_date))
            ->get();
       
         }
@@ -297,7 +303,7 @@ class OrderController extends Controller
                 if($order->discount == NULL || $order->discount == 0)
                 return 0;
                 else
-                return $order->discount . "%";
+                return $order->discount;
             })
             ->addColumn('customer_name', function ($order){
                 return $order->customer_name;

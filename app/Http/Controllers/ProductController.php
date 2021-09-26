@@ -189,7 +189,13 @@ class ProductController extends Controller
             unlink(public_path($product->image));
         }
 
-        Product::destroy($id);
+        // $product = Product::findOrFail($id);
+        $product->status = 1;
+
+       //  $barcode->name = $produk->id. '-' .$produk->name;
+        $product->save();
+
+        // Product::destroy($id);
 
         return response()->json([
             'success' => true,
@@ -198,7 +204,9 @@ class ProductController extends Controller
     }
 
     public function apiProducts(){
-        $product = Product::all();
+        // $product = Product::all();
+        $product = Product::where('status', 0)->get();
+
         // var_dump($pbarcode);
 
 

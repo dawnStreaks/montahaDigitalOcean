@@ -81,7 +81,8 @@ class ProductOutController extends Controller
         // $price = \DB::table('products')->select('price')->where('id', $request['product_id'] )->get();
         $subtotal = $price * $request->qty ;
         if($request->discount > 0)
-        $subtotal = $subtotal - ($subtotal* ($request->discount/100));
+        $subtotal = $subtotal - $request->discount;
+        // $subtotal = $subtotal - ($subtotal* ($request->discount/100));
         Product_Out::create(array_merge($request->all(), ['product_id' =>$product_id , 'po_no' => rand(1, 99999), 'price' => $price, 'refund_status' => 0, 'subtotal' => $subtotal, 'cashier' => Auth::user()->name]));
         $product = Product::findOrFail($request->product_id);
         $product->qty -= $request->qty;
@@ -139,7 +140,7 @@ class ProductOutController extends Controller
         $subtotal =  $request->price * $request->qty ;
 
           if($request->discount > 0)
-            $subtotal = $subtotal - ($subtotal* ($request->discount/100));
+            $subtotal = $subtotal - $request->discount;
         
         $Product_Out->update(array_merge($request->all(), ['subtotal' => $subtotal, 'cashier' => Auth::user()->name]));
 
@@ -169,7 +170,9 @@ class ProductOutController extends Controller
         $subtotal = $Product_Out->price * $Product_Out->qty ; //in case refund amount is included, 
 
           if($Product_Out->discount > 0)
-            $subtotal = $subtotal - ($subtotal* ($Product_Out->discount/100));
+            $subtotal = $subtotal - $Product_Out->discount;
+
+            // $subtotal = $subtotal - ($subtotal* ($Product_Out->discount/100));
         
         $Product_Out->update(['subtotal' => $subtotal, 'cashier' => Auth::user()->name, 'refund_status' => $refund_status]);
 
@@ -260,7 +263,7 @@ class ProductOutController extends Controller
                 if($product->discount == NULL || $product->discount == 0)
                 return 0;
                 else
-                return $product->discount . "%";
+                return $product->discount;
             })
             ->addColumn('customer_name', function ($product){
                 return $product->customer->name;

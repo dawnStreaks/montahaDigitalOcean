@@ -81,12 +81,12 @@
                     <th>Date</th>
 
                     <th>Products</th>
-                    <th>Price</th>
+                    <th>Subtotal</th>
+                    {{-- <th>Price</th> --}}
                     <th>Paid Amount</th>
                     <th>Credit</th>
-                    <th>Qty</th>
+                    {{-- <th>Qty</th> --}}
                     <th>Discount</th>
-                    <th>Subtotal</th>
                     <th>PO_No</th>
                     <th>Customer Name</th>
                     <th>Mobile No</th>
@@ -175,12 +175,13 @@
                         {data: 'date', name: 'date'},
 
                 {data: 'products_name', name: 'products_name'},
-                {data: 'price', name: 'price'},
+                {data: 'subtotal', name: 'subtotal'},
+                // {data: 'price', name: 'price'},
                 {data: 'paid_amount', name: 'paid_amount'},
                 {data: 'balance', name: 'balance'},
-                {data: 'qty', name: 'qty'},
+                // {data: 'qty', name: 'qty'},
                 {data: 'discount', name: 'discount'},
-                {data: 'subtotal', name: 'subtotal'},
+                // {data: 'subtotal', name: 'subtotal'},
                 
                 {data: 'po_no', name: 'po_no'},
                 {data: 'customer_name', name: 'customer_name'},
@@ -193,7 +194,8 @@
 
                 // {data: 'cashier', name: 'cashier'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
-            ]
+            ],
+            order: [ [0, 'desc'] ]
         });
 
         $( "#filter-form" ).submit(function( event ) {

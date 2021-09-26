@@ -171,7 +171,8 @@ class SaleController extends Controller
        
           $subtotal = $request->price * $request->qty ;
           if($request->discount > 0)
-            $subtotal = $subtotal - ($subtotal* ($request->discount/100));
+          $subtotal = $subtotal - $request->discount;
+            // $subtotal = $subtotal - ($subtotal* ($request->discount/100));
     //   var_dump($request->all());
         $Temp_Sale->update(array_merge($request->all(), ['subtotal' => $subtotal]));
 
@@ -294,7 +295,7 @@ class SaleController extends Controller
     {
         $i = 0;
         $temp_sales = Temp_Sale::all();
-        $total_amount = \DB::select(\DB::raw("select SUM((price - (price * (discount/100))) * qty) as sum from temp_sales "));
+        $total_amount = \DB::select(\DB::raw("select SUM((price - discount) * qty) as sum from temp_sales "));
         //  dd($total_amount[0]->sum);// foreach($temp_sales as $object));
         // var_dump($temp_sales);
 
