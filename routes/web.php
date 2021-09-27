@@ -96,7 +96,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/exportOrderAllExcel','OrderController@exportExcel')->name('exportExcel.orderAll');
     Route::get('/exportOrder','OrderController@exportProductOut')->name('exportPDF.order');
     Route::get('/refundOrder/{id}','OrderController@refund')->name('refund');
-    Route::get('/checkCredit/{id}/{paid_amount}/{discount}','OrderController@checkCredit')->name('checkCredit');
+    Route::get('/checkCredit/{id}/{paid_amount}','OrderController@checkCredit')->name('checkCredit');
 
 
     Route::get('/getSubtotalSum/{from_date}/{to_date}','OrderController@getSubtotalSum')->name('getSubtotalSum');

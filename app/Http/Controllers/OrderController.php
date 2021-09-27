@@ -35,6 +35,10 @@ class OrderController extends Controller
             ->pluck('name','id');
         
 
+        // $customers = Customer::orderBy('name','ASC')
+        //     ->get()
+        //     ->pluck('name','id');
+
 
         $invoice_data = Order::all();
         // return view('orders.index', compact('products','customers', 'invoice_data'));
@@ -162,7 +166,7 @@ class OrderController extends Controller
             $find_product = \DB::select(\DB::raw("select id, price from products where barcode_id = $barcode_id"));
             $product_id = $find_product[0]->id;
             $price = $find_product[0]->price;
-            $credit= $subtotal - $request->paid_amount;
+            $credit= $price - $request->paid_amount;
             $order->update(array_merge($request->all(), ['subtotal' => $subtotal, 'cashier' => Auth::user()->name, 'product_id' => $product_id, 'price' => $price, 'balance' => $credit]));
             $product = Product::findOrFail($product_id);
             $product->qty -= $request->qty;
@@ -260,7 +264,8 @@ class OrderController extends Controller
         {
                  $order = Order::all();
                
-                }
+
+        }
 
         return Datatables::of($order)
             ->addColumn('products_name', function ($order){
@@ -371,7 +376,7 @@ class OrderController extends Controller
         ->join('products', 'products.id', '=', 'orders.product_id')
         ->join('barcodes', 'barcodes.id', '=', 'products.barcode_id')
         // ->join('customers', 'customers.id', '=', 'product_out.customer_id')
-        ->select('products.name as product_name','products.price as price', 'barcodes.name as barcode_name', 'orders.subtotal', 'orders.qty', 'orders.po_no', 'orders.date', 'orders.customer_name','orders.mob_no','orders.paid_amount','orders.balance')
+        ->select('products.name as product_name', 'barcodes.name as barcode_name', 'orders.subtotal', 'orders.qty', 'orders.po_no', 'orders.date', 'orders.customer_name','orders.mob_no','orders.paid_amount','orders.balance')
         ->whereIn('orders.id', $idst1)
         ->get();
         // dd($Product_Out);
@@ -416,12 +421,12 @@ class OrderController extends Controller
         return $Product;
     }
 
-    public function checkCredit($id, $paid_amount, $discount)
+    public function checkCredit($id, $paid_amount)
     {
         $bc = \DB::table('barcodes')->select('id')->where('name', $id )->get();
         $barcode_id = $bc[0]->id;
         $find_product = \DB::select(\DB::raw("select id, price from products where barcode_id = $barcode_id"));
-        $balance = $find_product[0]->price - $paid_amount - $discount; 
+        $balance = $find_product[0]->price - $paid_amount; 
         // $find_order = \DB::select(\DB::raw("select id from products where barcode_id = $barcode_id"));
 
         // dd(count($bc));

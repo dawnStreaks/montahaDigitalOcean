@@ -228,7 +228,7 @@ $('#refresh').click(function(){
         });
 
         $(document).on("change","#paid_amount",function(){
-            checkCredit($(product_id).val(), this.value, $(discount).val());
+            checkCredit($(product_id).val(), this.value);
         });
 
         $('.input-daterange').datepicker({
@@ -294,9 +294,9 @@ $('#refresh').click(function(){
             });
         }
 
-        function checkCredit(id, paid_amount, discount) {
+        function checkCredit(id, paid_amount) {
             $.ajax({
-                url: "{{ url('checkCredit') }}" + '/' + id + '/' + paid_amount+ '/' + discount,
+                url: "{{ url('checkCredit') }}" + '/' + id + '/' + paid_amount,
                 type: "GET",
                 dataType: "JSON",
                 success: function(data) {
