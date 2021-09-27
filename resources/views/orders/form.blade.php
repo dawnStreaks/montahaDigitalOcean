@@ -125,6 +125,12 @@
                             <span class="help-block with-errors"></span>
                         </div>
                         <div class="form-group">
+                            <label>Discount </label>
+                        <input type="number" value="0" min="0" max="100" id="discount" name="discount" step="1"/>
+                        <span class="help-block with-errors"></span>
+                        </div>
+
+                        <div class="form-group">
                             <label>Paid Amount</label>
                             <input type="text" class="form-control" id="paid_amount" name="paid_amount" required>
                             <span class="help-block with-errors"></span>
@@ -149,12 +155,7 @@
                             <span class="help-block with-errors"></span>
                         </div>
 
-                        <div class="form-group">
-                            <label>Discount </label>
-                        <input type="number" value="0" min="0" max="100" id="discount" name="discount" step="1"/>
-                        <span class="help-block with-errors"></span>
-                        </div>
-
+                       
                         
 
                         <div class="form-group">
