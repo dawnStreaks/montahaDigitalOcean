@@ -324,7 +324,7 @@ class SaleController extends Controller
                 $test['refund_status'] = 0;
                 if($item['discount']>0)    
                 {
-                $test['subtotal'] =  ($item['price'] - ( $item['price']* ( $item['discount']/100))) * $item['qty']; 
+                $test['subtotal'] =  ($item['price'] - $item['discount']) * $item['qty']; 
                 $test['discount'] = $item['discount'];    
                 }
                 else{
