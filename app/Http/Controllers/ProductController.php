@@ -61,6 +61,7 @@ class ProductController extends Controller
         }
     // if($input['barcode'])
         $input['barcode_id'] = $barcode->id;
+        $input['status'] = 0;
         Product::create($input);
         $bc = \DB::table('products')->select('id')->where('barcode_id', $input['barcode_id'] )->get();
         // dd($bc[0]->id);
