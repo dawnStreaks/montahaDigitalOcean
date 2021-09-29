@@ -159,7 +159,7 @@
             @endphp
             <tr class="item {{$tr}}">
                 <td colspan="2">{{ $productData->product_name }} &nbsp;&nbsp; </td>
-                <td colspan="2">{{ $productData->subtotal }} x {{ $productData->qty }} &nbsp;&nbsp;</td>
+                <td colspan="2">{{ $productData->price }} x {{ $productData->qty }} &nbsp;&nbsp;</td>
                 <!-- <td></td> -->
                 <td colspan="2">{{ number_format($productData->subtotal * $productData->qty, 3, '.', '') }}</td>
             </tr>
@@ -347,7 +347,7 @@
             @endphp
             <tr class="item {{$tr}}">
                 <td colspan="2">{{ $productData->product_name }} &nbsp;&nbsp; </td>
-                <td colspan="2">{{ $productData->subtotal }} x {{ $productData->qty }} &nbsp;&nbsp;</td>
+                <td colspan="2">{{ $productData->price }} x {{ $productData->qty }} &nbsp;&nbsp;</td>
                 <!-- <td></td> -->
                 <td colspan="2">{{ number_format($productData->subtotal * $productData->qty, 3, '.', '') }}</td>
             </tr>
