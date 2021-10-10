@@ -185,8 +185,8 @@ class OrderController extends Controller
         $Product_Out->qty = 0;
         $subtotal = $Product_Out->price * $Product_Out->qty ; //in case refund amount is included, 
 
-          if($Product_Out->discount > 0)
-          $subtotal = $subtotal - $Product_Out->discount;
+        //   if($Product_Out->discount > 0)
+        //   $subtotal = $subtotal - $Product_Out->discount;
 
             // $subtotal = $subtotal - ($subtotal* ($Product_Out->discount/100));
         

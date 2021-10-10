@@ -40,10 +40,12 @@
                     <th>#</th>
                     <th>Name</th>
                     <th>Code</th>
-                    <th>Barcode</th>
+                    <th>Image</th>
+                    {{-- <th>Barcode</th> --}}
                     <th>price</th>
                     <th>Quantity</th>
-                    <th>Image</th>
+                    <th>Barcode</th>
+                    {{-- <th>Image</th> --}}
                     <th>Category</th>
                     <th></th>
                 </tr>
@@ -76,10 +78,12 @@
                 {data: 'id', name: 'id'},
                 {data: 'name', name: 'name'},
                 {data: 'barcode_name', name: 'barcode_name'},
-                {data: 'barcode_image', name: 'barcode_image'},
+                {data: 'show_photo', name: 'show_photo'},
+                // {data: 'barcode_image', name: 'barcode_image'},
                 {data: 'price', name: 'price'},
                 {data: 'qty', name: 'qty'},
-                {data: 'show_photo', name: 'show_photo'},
+                // {data: 'show_photo', name: 'show_photo'},
+                {data: 'barcode_image', name: 'barcode_image'},
                 {data: 'category_name', name: 'category_name'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ]

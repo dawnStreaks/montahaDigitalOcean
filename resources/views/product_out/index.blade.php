@@ -88,18 +88,21 @@
             <table id="products-out-table" class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Multiple Export Invoice</th>
-                    <th>ID</th>
+                    {{-- <th>Multiple Export Invoice</th> --}}
+                    {{-- <th>ID</th> --}}
                     <th>PO_No</th>
                     <th>Products</th>
                     <th>Price</th>
-                    <th>QTY</th>
+                    {{-- <th>QTY</th> --}}
                     <th>Discount</th>
                     <th>Subtotal</th>
+                    <th>QTY</th>
                     <th>Date</th>
                     <th>Customer Name</th>
                     <th>Refund Status</th>
                     <th> Cashier </th>
+                    <th>ID</th>
+                    <th>Multiple Export Invoice</th>
                     <th></th>
 
                 </tr>
@@ -187,18 +190,20 @@
                 }
                 },
             columns: [
-                {data: 'multiple_export', name: 'multiple_export'},
-                {data: 'id', name: 'id'},
+                // {data: 'multiple_export', name: 'multiple_export'},
+                // {data: 'id', name: 'id'},
                 {data: 'po_no', name: 'po_no'},
                 {data: 'products_name', name: 'products_name'},
                 {data: 'price', name: 'price'},
-                {data: 'qty', name: 'qty'},
                 {data: 'discount', name: 'discount'},
                 {data: 'subtotal', name: 'subtotal'},
+                {data: 'qty', name: 'qty'},
                 {data: 'date', name: 'date'},
                 {data: 'customer_name', name: 'customer_name'},
                 {data: 'refund_status', name: 'refund_status'},
                 {data: 'cashier', name: 'cashier'},
+                {data: 'id', name: 'id'},
+                {data: 'multiple_export', name: 'multiple_export'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ],
             initComplete: function () {

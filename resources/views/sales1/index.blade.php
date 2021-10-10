@@ -64,13 +64,16 @@
             <table id="sales-table" class="table table-striped">
                 <thead>
                 <tr>
-                    <th>ID</th>
+                    {{-- <th>ID</th> --}}
+                    <th>Date</th>
                     <th>PO No.</th>
                     <th>Total Amount</th>
                     <th>Customer Name</th>
-                    <th>Date</th>
+                    <th>Mobile</th>
+                    {{-- <th>Date</th> --}}
                     <th>Refund Status</th>
                     <th>Cashier</th>
+                    <th>ID</th>
                     <th>Actions</th>
                     
                 </tr>
@@ -148,13 +151,15 @@
                 }
                 },
             columns: [
-                {data: 'id', name: 'id'},
+                // {data: 'id', name: 'id'},
+                {data: 'date', name: 'date'},
                 {data: 'po_no', name: 'po_no'},
                 {data: 'total_amount', name: 'total_amount'},
                 {data: 'customer_name', name: 'customer_name'},
-                {data: 'date', name: 'date'},
+                {data: 'mob_no', name: 'mob_no'},
                 {data: 'refund_status', name: 'refund_status'},
                 {data: 'cashier', name: 'cashier'},
+                {data: 'id', name: 'id'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ],
             order: [ [0, 'desc'] ]
