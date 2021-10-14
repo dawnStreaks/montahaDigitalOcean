@@ -182,6 +182,8 @@ class OrderController extends Controller
          $refund_status = "Refund of ". $Product_Out->paid_amount . "KWD  "   ." Qty x Price " . $Product_Out->qty. " x ". $Product_Out->price . " on ". date("Y/m/d"). "by ". $Product_Out->cashier;
         // Refund::create(['product_out_id' => $id, 'po_no' => $Product_Out->po_no, 'refund_date' =>  date("Y/m/d"), 'refund_amount' => $Product_Out->price,  'cashier' => Auth::user()->name]);
         $Product_Out->price = 0;
+        $Product_Out->balance = 0;
+        $Product_Out->paid_amount = 0;
         $Product_Out->qty = 0;
         $subtotal = $Product_Out->price * $Product_Out->qty ; //in case refund amount is included, 
 

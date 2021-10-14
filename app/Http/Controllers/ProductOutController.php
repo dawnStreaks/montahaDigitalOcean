@@ -167,6 +167,8 @@ class ProductOutController extends Controller
 
         $Product_Out->price = 0;
         $Product_Out->qty = 0;
+        // $Product_Out->balance = 0;
+        // $Product_Out->paid_amount = 0;
         $subtotal = $Product_Out->price * $Product_Out->qty ; //in case refund amount is included, 
 
         //   if($Product_Out->discount > 0)
