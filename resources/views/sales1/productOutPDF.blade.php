@@ -116,7 +116,7 @@
             Instagram:  @montahacouture <br>
             <br>
             <div align='left'>
-            No: {{$Product_Out[0]->po_no}}  &nbsp;&nbsp;&nbsp;Date: {{date("d/m/Y",time())}} <br>
+            No: {{$Product_Out[0]->po_no}}  &nbsp;رقم الفاتورة&nbsp;&nbsp;Date: {{date("d/m/Y",time())}} &nbsp; التاريخ <br>
             </div>
             <br>
         <div align='left'>
