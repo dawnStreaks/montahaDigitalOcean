@@ -182,11 +182,11 @@
             <tr class="total">
                 <!-- <td></td>
                 <td></td> -->
-                <td colspan="3">
-                الكمية &nbsp;<b>Total Items:</b> {{number_format($allQty)}}
+                <td colspan="4">
+                <b>Total Items:</b> {{number_format($allQty)}} <b>الكمية </b>&nbsp;
                 </td>
                 <td colspan="3">
-                &nbsp; المدفوع<b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD
+                <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>المدفوع</b>&nbsp;
                 </td>
             </tr>
         </table>
