@@ -116,12 +116,12 @@
             Instagram:  @montahacouture <br>
             <br>
             <div align='left'>
-            No: {{$Product_Out[0]->po_no}}  &nbsp;رقم الفاتورة&nbsp;&nbsp;Date: {{date("d/m/Y",time())}} &nbsp; التاريخ <br>
+            No: {{$Product_Out[0]->po_no}}  &nbsp;رقم الفاتورة&nbsp; Date: {{date("d/m/Y",time())}} &nbsp; التاريخ &nbsp;<br>
             </div>
             <br>
         <div align='left'>
-            Customer: {{$Sales_New[0]->customer_name}} <br>
-            Mobile: {{$Sales_New[0]->mob_no}}<br>
+            Customer: {{$Sales_New[0]->customer_name}}&nbsp; العميل &nbsp;<br>
+            Mobile: {{$Sales_New[0]->mob_no}} الموبايل &nbsp;<br>
             Delivery Date: {{date("d/m/Y", strtotime($Product_Out[0]->date))}}
                                  <br>
         </div>
@@ -130,6 +130,12 @@
 <div class="invoice-box" style="transform: translateY(-50px);">
     <table cellpadding="0" cellspacing="0">
                    
+            <tr class="heading">
+                <td colspan="2">الصيف</td>
+                <td colspan="2"> السعر</td>
+                <td colspan="2">المجموع</td>
+
+            </tr>
             <tr class="heading">
                 <td colspan="2">Name</td>
                 <td colspan="2">Price</td>
@@ -177,10 +183,10 @@
                 <!-- <td></td>
                 <td></td> -->
                 <td colspan="3">
-                    <b>Total Items:</b> {{number_format($allQty)}}
+                الكمية &nbsp;<b>Total Items:</b> {{number_format($allQty)}}
                 </td>
                 <td colspan="3">
-                   <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD
+                &nbsp; المدفوع<b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD
                 </td>
             </tr>
         </table>
