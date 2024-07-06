@@ -192,6 +192,17 @@
                 </td>
             </tr>
         </table>
+        <div>
+
+<p style="text-align: center;">
+الاستبدال أو الاسترجاع بالفاتورة الاصلية خلال 14 يوم من تاريخ الشراء
+</p>
+
+
+<p style="text-align: center;">
+Exchange or return within 14 days of purchase with the original invoice.
+</p>
+</div>
     </div>
 </body>
 </html>
