@@ -392,10 +392,19 @@
 
         <p style="text-align: center;">سياسة التبديل والإسترجاع</p>
 
-<p style="text-align: left;">الاستبدال أو الاسترجاع بالفاتورة الاصلية خلال 14 يوم من تاريخ الشراء
-البضاعة التي تم التعديل عليها لا يمكن استبدالها او ارجاعها للمعرض
-موديلات السهرة يمكن استبدالها او ارجاعها خلال 24
-ساعة من وقت الشراء فقط</p>
+        <p style="text-align: left;">
+الاستبدال أو الاسترجاع بالفاتورة الاصلية خلال 14 يوم من تاريخ الشراء ، البضاعة التي تم التعديل عليها لا
+
+        </p>
+        </div>
+        <div>
+
+
+        <p style="text-align: center;">
+
+        Exchange or return with the original invoice within 14 days from the purchase date. Modified goods are not eligible for exchange or return.
+
+        </p>
         </div>
     </div>
 </body>
