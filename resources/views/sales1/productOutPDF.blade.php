@@ -391,17 +391,14 @@
         <div>
 
         <p style="text-align: center;">
-الاستبدال أو الاسترجاع بالفاتورة الاصلية خلال 14 يوم من تاريخ الشراء ، البضاعة التي تم التعديل عليها لا
-
+        الاستبدال أو الاسترجاع بالفاتورة الاصلية خلال 14 يوم من تاريخ الشراء
         </p>
         </div>
         <div>
 
 
         <p style="text-align: center;">
-
-        Exchange or return with the original invoice within 14 days from the purchase date. Modified goods are not eligible for exchange or return.
-
+        Exchange or return within 14 days of purchase with the original invoice.
         </p>
         </div>
     </div>
