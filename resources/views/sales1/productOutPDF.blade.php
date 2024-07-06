@@ -393,9 +393,7 @@
         <p style="text-align: center;">
         الاستبدال أو الاسترجاع بالفاتورة الاصلية خلال 14 يوم من تاريخ الشراء
         </p>
-        </div>
-        <div>
-
+      
 
         <p style="text-align: center;">
         Exchange or return within 14 days of purchase with the original invoice.
