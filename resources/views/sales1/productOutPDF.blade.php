@@ -378,12 +378,12 @@
                 <!-- <td></td>
                 <td></td> -->
                 <td colspan="3">
-                    <b>Total Items:</b> {{number_format($allQty)}}
+                <b>Total Qty:</b> {{number_format($allQty)}} <b>الكمية </b>&nbsp;
                 </td>
                 </tr>
                 <tr>
                 <td colspan="3">
-                   <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD
+                   <b>Total Payment:</b> {{number_format($allTotal, 3, '.', '')}} KWD
                 </td>
             </tr>
         </table>
