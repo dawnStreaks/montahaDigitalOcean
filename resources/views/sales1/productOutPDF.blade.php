@@ -388,6 +388,16 @@
                 </td>
             </tr>
         </table>
+        <div>
+
+        <p style="text-align: center;">سياسة التبديل والإسترجاع</p>
+
+<p style="text-align: left;">الاستبدال أو الاسترجاع بالفاتورة الاصلية خلال 14 يوم من تاريخ الشراء</p>
+<p style="text-align: left;">البضاعة التي تم التعديل عليها لا يمكن استبدالها او ارجاعها للمعرض</p>
+<p style="text-align: left;">موديلات السهرة يمكن استبدالها او ارجاعها خلال 24</p>
+
+<p style="text-align: center;">ساعة من وقت الشراء فقط</p>
+        </div>
     </div>
 </body>
 </html>
