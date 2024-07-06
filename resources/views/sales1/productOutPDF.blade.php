@@ -137,9 +137,9 @@
 
             </tr>
             <tr class="heading">
-                <td colspan="3">Name</td>
-                <td colspan="3">Price</td>
-                <td colspan="3">Subtotal</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Subtotal</td>
             </tr>
 
             @php 
