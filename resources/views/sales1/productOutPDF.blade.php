@@ -131,15 +131,15 @@
     <table cellpadding="0" cellspacing="0">
                    
             <tr class="heading">
-                <td colspan="2">الصيف</td>
-                <td colspan="2"> السعر</td>
-                <td colspan="2">المجموع</td>
+                <td colspan="3">الصيف</td>
+                <td colspan="3"> السعر</td>
+                <td colspan="3">المجموع</td>
 
             </tr>
             <tr class="heading">
-                <td colspan="2">Name</td>
-                <td colspan="2">Price</td>
-                <td colspan="2">Subtotal</td>
+                <td colspan="3">Name</td>
+                <td colspan="3">Price</td>
+                <td colspan="3">Subtotal</td>
             </tr>
 
             @php 
@@ -182,10 +182,10 @@
             <tr class="total">
                 <!-- <td></td>
                 <td></td> -->
-                <td colspan="6">
+                <td>
                 <b>Total Qty:</b> {{number_format($allQty)}} <b>الكمية </b>&nbsp;
                 </td>
-                <td colspan="6">
+                <td>
                 <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>المدفوع</b>&nbsp;
                 </td>
             </tr>
