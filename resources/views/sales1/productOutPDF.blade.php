@@ -383,7 +383,7 @@
                 </tr>
                 <tr>
                 <td colspan="3">
-                <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>المدفوع</b>&nbsp;
+                <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD&nbsp;<b>المدفوع</b>;
                 </td>
             </tr>
         </table>
