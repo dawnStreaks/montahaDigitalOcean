@@ -133,7 +133,7 @@
             <tr class="heading">
                 <td>الصيف</td>
                 <td> السعر</td>
-                <td colspan="3">المجموع</td>
+                <td>المجموع</td>
 
             </tr>
             <tr class="heading">
