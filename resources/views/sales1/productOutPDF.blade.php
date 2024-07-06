@@ -390,9 +390,7 @@
         </table>
         <div>
 
-        <p style="text-align: center;">سياسة التبديل والإسترجاع</p>
-
-        <p style="text-align: left;">
+        <p style="text-align: center;">
 الاستبدال أو الاسترجاع بالفاتورة الاصلية خلال 14 يوم من تاريخ الشراء ، البضاعة التي تم التعديل عليها لا
 
         </p>
