@@ -131,8 +131,8 @@
     <table cellpadding="0" cellspacing="0">
                    
             <tr class="heading">
-                <td colspan="3">الصيف</td>
-                <td colspan="3"> السعر</td>
+                <td>الصيف</td>
+                <td> السعر</td>
                 <td colspan="3">المجموع</td>
 
             </tr>
