@@ -116,7 +116,7 @@
             Instagram:  @montahacouture <br>
             <br>
             <div align='left'>
-            No: {{$Product_Out[0]->po_no}}  &nbsp;رقم الفاتورة&nbsp; Date: {{date("d/m/Y",time())}} &nbsp; التاريخ &nbsp;<br>
+            No: {{$Product_Out[0]->po_no}}  &nbsp;رقم الفاتورة&nbsp;<br> Date: {{date("d/m/Y",time())}} &nbsp; التاريخ &nbsp;<br>
             </div>
             <br>
         <div align='left'>
@@ -182,10 +182,10 @@
             <tr class="total">
                 <!-- <td></td>
                 <td></td> -->
-                <td colspan="4">
-                <b>Total Items:</b> {{number_format($allQty)}} <b>الكمية </b>&nbsp;
+                <td colspan="6">
+                <b>Total Qty:</b> {{number_format($allQty)}} <b>الكمية </b>&nbsp;
                 </td>
-                <td colspan="3">
+                <td colspan="6">
                 <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>المدفوع</b>&nbsp;
                 </td>
             </tr>
