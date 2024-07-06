@@ -323,9 +323,9 @@
 <div class="invoice-box" style="transform: translateY(-50px);">
     <table cellpadding="0" cellspacing="0">
     <tr class="heading">
-                <td>الصيف</td>
-                <td> السعر</td>
-                <td>المجموع</td>
+                <td colspan="2">الصيف</td>
+                <td colspan="2"> السعر</td>
+                <td colspan="2">المجموع</td>
 
             </tr> 
             <tr class="heading">
