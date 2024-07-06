@@ -195,11 +195,10 @@
         <div>
 
 <p style="text-align: center;">
-الاستبدال أو الاسترجاع بالفاتورة الاصلية خلال 14 يوم من تاريخ الشراء
-</p>
+التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.</p>
 
 
-<p style="text-align: center;">
+<p style="text-align: center;font-size: 8px">
 Exchange or return within 14 days of purchase with the original invoice.
 </p>
 </div>
@@ -402,11 +401,10 @@ Exchange or return within 14 days of purchase with the original invoice.
         <div>
 
         <p style="text-align: center;">
-        الاستبدال أو الاسترجاع بالفاتورة الاصلية خلال 14 يوم من تاريخ الشراء
-        </p>
+        التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.        </p>
       
 
-        <p style="text-align: center;">
+        <p style="text-align: center;font-size: 8px">
         Exchange or return within 14 days of purchase with the original invoice.
         </p>
         </div>
