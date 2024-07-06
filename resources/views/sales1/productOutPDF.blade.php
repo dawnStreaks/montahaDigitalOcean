@@ -130,16 +130,17 @@
 <div class="invoice-box" style="transform: translateY(-50px);">
     <table cellpadding="0" cellspacing="0">
                    
-            <tr class="heading">
-                <td>الصيف</td>
-                <td> السعر</td>
-                <td>المجموع</td>
+    <tr class="heading">
+                <td colspan="2">الصيف</td>
+                <td colspan="2"> السعر</td>
+                <td colspan="2">المجموع</td>
 
-            </tr>
+            </tr> 
             <tr class="heading">
-                <td>Name</td>
-                <td>Price</td>
-                <td>Subtotal</td>
+                <td colspan="2">Name</td>
+                <td colspan="2">Price</td>
+                <!-- <td></td> -->
+                <td colspan="2">Subtotal</td>
             </tr>
 
             @php 
@@ -185,6 +186,8 @@
                 <td>
                 <b>Total Qty:</b> {{number_format($allQty)}} <b>الكمية </b>&nbsp;
                 </td>
+                </tr>
+                <tr>
                 <td>
                 <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>المدفوع</b>&nbsp;
                 </td>
