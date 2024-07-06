@@ -139,7 +139,6 @@
             <tr class="heading">
                 <td colspan="2">Name</td>
                 <td colspan="2">Price</td>
-                <!-- <td></td> -->
                 <td colspan="2">Subtotal</td>
             </tr>
 
@@ -381,6 +380,8 @@
                 <td colspan="3">
                     <b>Total Items:</b> {{number_format($allQty)}}
                 </td>
+                </tr>
+                <tr>
                 <td colspan="3">
                    <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD
                 </td>
