@@ -175,17 +175,20 @@
             <br>
             <br>
             <br>
-
             <tr class="total">
                 <!-- <td></td>
                 <td></td> -->
                 <td colspan="3">
-                    <b>Total Items:</b> {{number_format($total)}}
+                <b>Total Qty:</b> {{number_format($total)}} <b>الكمية </b>&nbsp;
                 </td>
+                </tr>
+                <tr>
                 <td colspan="3">
-                   <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD
+                   <b>Payment:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>المدفوع</b>
                 </td>
             </tr>
+
+
         </table>
     </div>
 </body>
@@ -367,17 +370,19 @@
             <br>
             <br>
             <br>
-
             <tr class="total">
                 <!-- <td></td>
                 <td></td> -->
                 <td colspan="3">
-                   <b> Total Items: </b> {{number_format($total)}}
+                <b>Total Qty:</b> {{number_format($total)}} <b>الكمية </b>&nbsp;
                 </td>
+                </tr>
+                <tr>
                 <td colspan="3">
-                   <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KWD
+                   <b>Payment:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>المدفوع</b>
                 </td>
             </tr>
+          
         </table>
     </div>
 </body>
