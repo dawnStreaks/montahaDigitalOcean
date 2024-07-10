@@ -106,7 +106,7 @@
 </head>
 <body>
     <div align='center'>
-        <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;">
+        <!-- <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;"> -->
                                                                
         <h3>{{ $companyInfo->name }}</h3><br>
        
@@ -308,7 +308,7 @@ Exchange or return within 14 days of purchase with the original invoice.
 </head>
 <body>
     <div align='center'>
-        <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;">
+        <!-- <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;"> -->
                                                                
         <h3>{{ $companyInfo->name }}</h3><br>
        
