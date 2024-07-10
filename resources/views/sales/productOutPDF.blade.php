@@ -191,6 +191,13 @@
 
         </table>
     </div>
+    <p style="text-align: center;font-size: 12px">
+التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.</p>
+
+
+<p style="text-align: center;font-size: 11px">
+Exchange or return within 14 days of purchase with the original invoice.
+</p>
 </body>
 </html>
 <!doctype html>
@@ -385,5 +392,12 @@
           
         </table>
     </div>
+    <p style="text-align: center;font-size: 12px">
+التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.</p>
+
+
+<p style="text-align: center;font-size: 11px">
+Exchange or return within 14 days of purchase with the original invoice.
+</p>
 </body>
 </html>
