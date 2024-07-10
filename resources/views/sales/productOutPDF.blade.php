@@ -131,13 +131,18 @@
     <table cellpadding="0" cellspacing="0">
 
        
+    <tr class="heading">
+                <td colspan="2">الصيف</td>
+                <td colspan="2"> السعر</td>
+                <td colspan="2">المجموع</td>
+
+            </tr> 
             <tr class="heading">
                 <td colspan="2">Name</td>
                 <td colspan="2">Price</td>
                 <!-- <td></td> -->
                 <td colspan="2">Subtotal</td>
             </tr>
-
             @php 
             $total = count($Product_Out); 
             $i=1;
@@ -317,7 +322,12 @@
 <div class="invoice-box" style="transform: translateY(-50px);">
     <table cellpadding="0" cellspacing="0">
 
-       
+    <tr class="heading">
+                <td colspan="2">الصيف</td>
+                <td colspan="2"> السعر</td>
+                <td colspan="2">المجموع</td>
+
+            </tr> 
             <tr class="heading">
                 <td colspan="2">Name</td>
                 <td colspan="2">Price</td>
