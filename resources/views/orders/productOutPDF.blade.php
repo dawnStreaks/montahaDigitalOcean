@@ -207,6 +207,16 @@
                 <td colspan="2"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD  <b>مدفوع</b></td>
             </tr>
         </table>
+        <div>
+
+<p style="text-align: center;font-size: 12px">
+التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.        </p>
+
+
+<p style="text-align: center;font-size: 11px">
+Exchange or return within 14 days of purchase with the original invoice.
+</p>
+</div>
     </div>
 </body>
 </html>
@@ -409,7 +419,7 @@
                 <td colspan="2">
                 <b>Qty:</b> {{number_format($total)}} 
                 </td>
-                <td colspan="2"> <b>الكمية</b>  </td>
+                <td colspan="1"> <b>الكمية</b>  </td>
           
                 <td colspan="3">
                    <b>Cost:</b> {{number_format($allTotal, 3, '.', '')}}KWD 
@@ -426,6 +436,16 @@
             </tr>
           
         </table>
+        <div>
+
+<p style="text-align: center;font-size: 12px">
+التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.        </p>
+
+
+<p style="text-align: center;font-size: 11px">
+Exchange or return within 14 days of purchase with the original invoice.
+</p>
+</div>
     </div>
 </body>
 </html>
