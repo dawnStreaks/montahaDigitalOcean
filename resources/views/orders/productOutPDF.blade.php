@@ -114,20 +114,28 @@
         phone: +965 22253470 <br>
 
         Instagram:  @montahacouture <br>
-        <br>
-        <div align='left'>
+        
+       <br>
+            <div align='left'>
             No: {{$Product_Out[0]->po_no}}  &nbsp;رقم الفاتورة&nbsp;<br> Date: {{date("d/m/Y",time())}} &nbsp; التاريخ &nbsp;<br>
             </div>
             <br>
         <div align='left'>
-            Customer: {{$Sales_New[0]->customer_name}}&nbsp; العميل &nbsp;<br>
-            Mobile: {{$Sales_New[0]->mob_no}} الموبايل &nbsp;<br>
-            Delivery Date: {{date("d/m/Y", strtotime($Product_Out[0]->date))}}
-                                 <br>
+            Customer: {{$Product_Out[0]->customer_name}}&nbsp; العميل &nbsp;<br>
+            Mobile: {{$Product_Out[0]->mob_no}} الموبايل &nbsp;<br>
+            Delivery Date: {{date("d/m/Y", strtotime($Product_Out[0]->date))}} &nbsp; تاريخ الاستلام &nbsp;<br>
         </div>
+    
+
     </div>
 <div class="invoice-box" style="transform: translateY(-50px);">
     <table cellpadding="0" cellspacing="0">
+    <tr class="heading">
+                <td colspan="2">الصيف</td>
+                <td colspan="2"> السعر</td>
+                <td colspan="2">المجموع</td>
+
+            </tr> 
 
          <tr class="heading">
                 {{-- <td colspan="2">id</td> --}}
@@ -184,21 +192,21 @@
 
             <tr class="total">
                
-                <td colspan="3">
-                   <b> Total Items:</b> {{number_format($total)}}
+            <td colspan="3">
+                <b>Total Qty:</b> {{number_format($total)}} <b>الكمية </b>&nbsp;
                 </td>
             
           
                 <td colspan="3">
-                   <b>Total: </b> {{number_format($allTotal, 3, '.', '')}} KD
+                   <b>Payment:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>المدفوع</b>
                 </td>
             </tr>
             <tr>
-                <td colspan="1"><b>Credit: </b> </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD  &nbsp;</td>
+                <td colspan="1"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD  &nbsp; <b>الائتمان</b></td>
             
             
-                <td colspan="1"> <b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD </td>
-            </tr>          
+                <td colspan="1"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD  &nbsp;<b>مدفوع</b></td>
+            </tr>
         </table>
     </div>
 </body>
@@ -321,21 +329,28 @@
 
         Instagram:  @montahacouture <br>
         <br>
-        <div align='left'>
-        No: {{$Product_Out[0]->po_no}}  &nbsp;&nbsp;&nbsp;Date: {{date("d/m/Y",time())}} <br>
-        </div>
-        <br>
+        
+    
     <div align='left'>
-        Customer: {{$Product_Out[0]->customer_name}} <br>
-        Mobile: {{$Product_Out[0]->mob_no}}<br>
-        Delivery Date: {{date("d/m/Y", strtotime($Product_Out[0]->date))}}
-                                     <br>
-    </div>
+            No: {{$Product_Out[0]->po_no}}  &nbsp;رقم الفاتورة&nbsp;<br> Date: {{date("d/m/Y",time())}} &nbsp; التاريخ &nbsp;<br>
+            </div>
+            <br>
+        <div align='left'>
+            Customer: {{$Product_Out[0]->customer_name}}&nbsp; العميل &nbsp;<br>
+            Mobile: {{$Product_Out[0]->mob_no}} الموبايل &nbsp;<br>
+            Delivery Date: {{date("d/m/Y", strtotime($Product_Out[0]->date))}}
+                                 <br>
+        </div>
 
     </div>
 <div class="invoice-box" style="transform: translateY(-50px);">
     <table cellpadding="0" cellspacing="0">
+    <tr class="heading">
+                <td colspan="2">الصيف</td>
+                <td colspan="2"> السعر</td>
+                <td colspan="2">المجموع</td>
 
+            </tr> 
          <tr class="heading">
                 {{-- <td colspan="2">id</td> --}}
 
@@ -391,20 +406,21 @@
 
             <tr class="total">
                
+                
                 <td colspan="3">
-                    <b>Total Items:</b> {{number_format($total)}}
+                <b>Total Qty:</b> {{number_format($total)}} <b>الكمية </b>&nbsp;
                 </td>
             
           
                 <td colspan="3">
-                   <b>Total:</b> {{number_format($allTotal, 3, '.', '')}} KD
+                   <b>Payment:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>المدفوع</b>
                 </td>
             </tr>
             <tr>
-                <td colspan="1"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD  &nbsp;</td>
+                <td colspan="1"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD  &nbsp; <b>الائتمان</b></td>
             
             
-                <td colspan="1"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD </td>
+                <td colspan="1"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD  &nbsp;<b>مدفوع</b></td>
             </tr>
           
         </table>
