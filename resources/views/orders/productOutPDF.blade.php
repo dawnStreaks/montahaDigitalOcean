@@ -419,7 +419,7 @@
                 <td colspan="2"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD  </td><td colspan="2"><b>الائتمان</b>  </td>
             
             
-                <td colspan="2"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD  <b>مدفوع</b> </td>
+                <td colspan="2"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD   </td><td colspan="2"><b>مدفوع</b>  </td>
             </tr>
          
             </tr>
