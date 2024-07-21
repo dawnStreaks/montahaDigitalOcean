@@ -407,13 +407,14 @@
                
                 
                 <td colspan="2">
-                <b>Qty:</b> {{number_format($total)}} <b>الكمية</b>
+                <b>Qty:</b> {{number_format($total)}} 
                 </td>
-            
+                <td colspan="2"> <b>الكمية</b>  </td>
           
                 <td colspan="3">
-                   <b>Cost:</b> {{number_format($allTotal, 3, '.', '')}}KWD <b>يكلف</b>
+                   <b>Cost:</b> {{number_format($allTotal, 3, '.', '')}}KWD 
                 </td>
+                <td colspan="2">  <b>يكلف</b>  </td>
             </tr>
             <tr>
                 <td colspan="2"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD  </td><td colspan="2"><b>الائتمان</b>  </td>
@@ -423,12 +424,7 @@
             </tr>
          
             </tr>
-            <tr>
-                <td colspan="2"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD   <b>الائتمان</b></td>
-            
-            
-                <td colspan="2"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD  <b>مدفوع</b></td>
-            </tr>
+          
         </table>
     </div>
 </body>
