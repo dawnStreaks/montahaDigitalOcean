@@ -190,11 +190,11 @@
             <br>
 
             <tr class="total">
-            <td colspan="1">
+            <td colspan="2">
                 <b>Qty:</b> {{number_format($total)}} 
                 </td>
                 <td colspan="1"> <b>الكمية</b>  </td> <td> </td>
-                <td colspan="2">   <b>Cost:</b>  </td>
+                <td colspan="1">   <b>Cost:</b>  </td>
                 <td colspan="1">
                    {{number_format($allTotal, 3, '.', '')}}KWD 
                 </td>
