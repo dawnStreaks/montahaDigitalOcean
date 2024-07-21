@@ -195,8 +195,7 @@
                 </td>
                 <td colspan="1">
                 {{number_format($total)}} 
-                </td>
-                <td colspan="1"> <b>الكمية</b>  </td> 
+                 <b>الكمية</b>  </td> 
                 <td colspan="1">   <b>Cost:</b>  </td>
                 <td colspan="1">
                    {{number_format($allTotal, 3, '.', '')}}KWD 
@@ -214,7 +213,7 @@
         <div>
 
 <p style="text-align: center;font-size: 12px"><b>
-التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.        <b></p>
+التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.        </b></p>
 
 
 <p style="text-align: center;font-size: 11px"><b>
@@ -435,7 +434,6 @@ Exchange or return within 14 days of purchase with the original invoice. </b>
             </tr>
             <tr>
                 <td colspan="1"><b>Credit:</b>  </td><td colspan="1">{{ number_format($credit, 3, '.', '') }}KWD  </td><td colspan="1"><b>الائتمان</b>  </td>
-            <td> </td>
             
                 <td colspan="1"><b>Paid:</b> </td><td colspan="1">{{ number_format($paid_amount, 3, '.', '') }}KWD   </td><td colspan="1"><b>مدفوع</b>  </td>
             </tr>
@@ -445,13 +443,13 @@ Exchange or return within 14 days of purchase with the original invoice. </b>
         </table>
         <div>
 
-<p style="text-align: center;font-size: 12px">
-التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.        </p>
+<b style="text-align: center;font-size: 12px">
+التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.        </b>
 
 
 <p style="text-align: center;font-size: 11px">
-Exchange or return within 14 days of purchase with the original invoice.
-</p>
+<b>Exchange or return within 14 days of purchase with the original invoice.</b>
+        </p>
 </div>
     </div>
 </body>
