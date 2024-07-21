@@ -421,9 +421,12 @@ Exchange or return within 14 days of purchase with the original invoice. </b>
                
                 
                 <td colspan="1">
-                <b>Qty:</b> {{number_format($total)}} 
+                <b>Qty:</b> 
                 </td>
-                <td colspan="1"> <b>الكمية</b>  </td> <td> </td><td> </td>
+                <td colspan="1">
+                {{number_format($total)}} 
+               
+                <b>الكمية</b>    </td>
                 <td colspan="1">   <b>Cost:</b>  </td>
                 <td colspan="1">
                    {{number_format($allTotal, 3, '.', '')}}KWD 
