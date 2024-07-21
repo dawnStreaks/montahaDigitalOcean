@@ -190,7 +190,7 @@
             <br>
 
             <tr class="total">
-            <td colspan="2">
+            <td colspan="1">
                 <b>Qty:</b> {{number_format($total)}} 
                 </td>
                 <td colspan="1"> <b>الكمية</b>  </td> <td> </td>
@@ -417,7 +417,7 @@ Exchange or return within 14 days of purchase with the original invoice.
             <tr class="total">
                
                 
-                <td colspan="2">
+                <td colspan="1">
                 <b>Qty:</b> {{number_format($total)}} 
                 </td>
                 <td colspan="1"> <b>الكمية</b>  </td> <td> </td>
