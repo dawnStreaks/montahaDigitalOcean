@@ -190,21 +190,22 @@
             <br>
 
             <tr class="total">
-               
-            <td colspan="3">
-                <b>Total Qty:</b> {{number_format($total)}} <b>الكمية </b>&nbsp;
+            <td colspan="2">
+                <b>Qty:</b> {{number_format($total)}} 
                 </td>
-            
-          
-                <td colspan="4">
-                   <b>Payment:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>المدفوع</b>
+                <td colspan="1"> <b>الكمية</b>  </td> <td> </td>
+                <td colspan="1">   <b>Cost:</b>  </td>
+                <td colspan="1">
+                   {{number_format($allTotal, 3, '.', '')}}KWD 
                 </td>
+                <td colspan="1">  <b>يكلف</b>  </td>
             </tr>
             <tr>
-                <td colspan="2"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD   <b>الائتمان</b></td>
+                <td colspan="1"><b>Credit:</b>  </td><td colspan="1">{{ number_format($credit, 3, '.', '') }}KWD  </td><td colspan="1"><b>الائتمان</b>  </td>
+            <td> </td>
             
-            
-                <td colspan="2"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD  <b>مدفوع</b></td>
+                <td colspan="1"><b>Paid:</b> </td><td colspan="1">{{ number_format($paid_amount, 3, '.', '') }}KWD   </td><td colspan="1"><b>مدفوع</b>  </td>
+            </tr>
             </tr>
         </table>
         <div>
@@ -428,7 +429,7 @@ Exchange or return within 14 days of purchase with the original invoice.
             </tr>
             <tr>
                 <td colspan="1"><b>Credit:</b>  </td><td colspan="1">{{ number_format($credit, 3, '.', '') }}KWD  </td><td colspan="1"><b>الائتمان</b>  </td>
-            
+            <td> </td>
             
                 <td colspan="1"><b>Paid:</b> </td><td colspan="1">{{ number_format($paid_amount, 3, '.', '') }}KWD   </td><td colspan="1"><b>مدفوع</b>  </td>
             </tr>
