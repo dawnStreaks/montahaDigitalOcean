@@ -441,10 +441,10 @@ Exchange or return within 14 days of purchase with the original invoice. </b>
             </tr>
           
         </table>
-        <div colspan='6'>
+        <div colspan='12'>
 
-<b style="text-align: center;font-size: 12px">
-التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.        </b>
+<p style="text-align: center;font-size: 12px"><b>
+التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.        </b></p>
 
 
 <p style="text-align: center;font-size: 11px">
