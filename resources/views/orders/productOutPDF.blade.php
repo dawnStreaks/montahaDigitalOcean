@@ -427,10 +427,10 @@ Exchange or return within 14 days of purchase with the original invoice.
                 <td colspan="1">  <b>يكلف</b>  </td>
             </tr>
             <tr>
-                <td colspan="2"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD  </td><td colspan="2"><b>الائتمان</b>  </td>
+                <td colspan="1"><b>Credit:</b>  </td><td colspan="1">{{ number_format($credit, 3, '.', '') }}KWD  </td><td colspan="1"><b>الائتمان</b>  </td>
             
             
-                <td colspan="2"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD   </td><td colspan="2"><b>مدفوع</b>  </td>
+                <td colspan="1"><b>Paid:</b> </td><td colspan="1">{{ number_format($paid_amount, 3, '.', '') }}KWD   </td><td colspan="1"><b>مدفوع</b>  </td>
             </tr>
          
             </tr>
