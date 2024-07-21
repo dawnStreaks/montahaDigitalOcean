@@ -216,7 +216,7 @@
 التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.        </b></p>
 
 
-<p style="text-align: center;font-size: 11px"><b>
+<p style="text-align: center;font-size: 12px"><b>
 Exchange or return within 14 days of purchase with the original invoice. </b>
 </p>
 </div>
@@ -434,10 +434,10 @@ Exchange or return within 14 days of purchase with the original invoice. </b>
             </tr>
             <tr>
                 <td colspan="1"><b>Credit:</b>  </td><td colspan="1">{{ number_format($credit, 3, '.', '') }}KWD  </td><td colspan="1"><b>الائتمان</b>  </td>
+            <td> </td>
             
                 <td colspan="1"><b>Paid:</b> </td><td colspan="1">{{ number_format($paid_amount, 3, '.', '') }}KWD   </td><td colspan="1"><b>مدفوع</b>  </td>
             </tr>
-         
             </tr>
           
         </table>
@@ -447,7 +447,7 @@ Exchange or return within 14 days of purchase with the original invoice. </b>
 التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.        </b></p>
 
 
-<p style="text-align: center;font-size: 11px">
+<p style="text-align: center;font-size: 12px">
 <b>Exchange or return within 14 days of purchase with the original invoice.</b>
         </p>
 </div>
