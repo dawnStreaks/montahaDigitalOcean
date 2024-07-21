@@ -406,12 +406,12 @@
             <tr class="total">
                
                 
-                <td>
+                <td colspan="4">
                 <b>Qty:</b> {{number_format($total)}} <b>الكمية </b>
                 </td>
             
           
-                <td>
+                <td colspan="4">
                    <b>Cost:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>   يكلف </b>
                 </td>
             </tr>
