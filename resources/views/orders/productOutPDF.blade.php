@@ -420,7 +420,7 @@ Exchange or return within 14 days of purchase with the original invoice.
                 <td colspan="1">
                 <b>Qty:</b> {{number_format($total)}} 
                 </td>
-                <td colspan="1"> <b>الكمية</b>  </td> <td> </td>
+                <td colspan="1"> <b>الكمية</b>  </td> <td> </td><td> </td>
                 <td colspan="1">   <b>Cost:</b>  </td>
                 <td colspan="1">
                    {{number_format($allTotal, 3, '.', '')}}KWD 
@@ -429,7 +429,7 @@ Exchange or return within 14 days of purchase with the original invoice.
             </tr>
             <tr>
                 <td colspan="1"><b>Credit:</b>  </td><td colspan="1">{{ number_format($credit, 3, '.', '') }}KWD  </td><td colspan="1"><b>الائتمان</b>  </td>
-            &nbsp;&nbsp;
+            <td> </td>
             
                 <td colspan="1"><b>Paid:</b> </td><td colspan="1">{{ number_format($paid_amount, 3, '.', '') }}KWD   </td><td colspan="1"><b>مدفوع</b>  </td>
             </tr>
