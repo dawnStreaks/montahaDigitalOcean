@@ -411,15 +411,15 @@
                 </td>
             
           
-                <td colspan="3">
-                   <b>Cost:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>   يكلف </b>
+                <td colspan="4">
+                   <b>Cost:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>   يكلف </b>&nbsp;
                 </td>
             </tr>
             <tr>
-                <td colspan="2"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD  &nbsp; <b>الائتمان</b></td>
+                <td colspan="2"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD  <b>الائتمان</b> &nbsp;</td>
             
             
-                <td colspan="2"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD  &nbsp;<b>مدفوع</b></td>
+                <td colspan="2"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD  <b>مدفوع</b> </td>
             </tr>
           
         </table>
