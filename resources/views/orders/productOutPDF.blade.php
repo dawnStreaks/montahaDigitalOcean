@@ -106,7 +106,7 @@
 </head>
 <body>
     <div align='center'>
-    <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;">
+    <!-- <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;"> -->
                                                            
     <h3>{{ $companyInfo->name }}</h3><br>
    
@@ -201,10 +201,10 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="1"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD   <b>الائتمان</b></td>
+                <td colspan="2"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD   <b>الائتمان</b></td>
             
             
-                <td colspan="1"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD  <b>مدفوع</b></td>
+                <td colspan="2"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD  <b>مدفوع</b></td>
             </tr>
         </table>
     </div>
@@ -319,7 +319,7 @@
 </head>
 <body>
     <div align='center'>
-    <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;">
+    <!-- <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;"> -->
                                                            
     <h3>{{ $companyInfo->name }}</h3><br>
    
