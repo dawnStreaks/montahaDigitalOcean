@@ -123,8 +123,7 @@
         <div align='left'>
             Customer: {{$Product_Out[0]->customer_name}}&nbsp; العميل &nbsp;<br>
             Mobile: {{$Product_Out[0]->mob_no}} الموبايل &nbsp;<br>
-            Delivery Date: {{date("d/m/Y", strtotime($Product_Out[0]->date))}} &nbsp; تاريخ الاستلام &nbsp;<br>
-        </div>
+            Delivery Date: {{date("d/m/Y", strtotime($Product_Out[0]->date))}} &nbsp;         </div>
     
 
     </div>
@@ -197,15 +196,15 @@
                 </td>
             
           
-                <td colspan="3">
+                <td colspan="4">
                    <b>Payment:</b> {{number_format($allTotal, 3, '.', '')}} KWD <b>المدفوع</b>
                 </td>
             </tr>
             <tr>
-                <td colspan="1"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD  &nbsp; <b>الائتمان</b></td>
+                <td colspan="1"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD   <b>الائتمان</b></td>
             
             
-                <td colspan="1"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD  &nbsp;<b>مدفوع</b></td>
+                <td colspan="1"><b>Paid:</b> </td><td colspan="2">{{ number_format($paid_amount, 3, '.', '') }}KD  <b>مدفوع</b></td>
             </tr>
         </table>
     </div>
