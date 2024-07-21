@@ -411,10 +411,10 @@
                 </td>
                 <td colspan="2"> <b>الكمية</b>  </td>
           
-                <td colspan="2">
+                <td colspan="3">
                    <b>Cost:</b> {{number_format($allTotal, 3, '.', '')}}KWD 
                 </td>
-                <td colspan="2">  <b>يكلف</b>  </td>
+                <td colspan="1">  <b>يكلف</b>  </td>
             </tr>
             <tr>
                 <td colspan="2"><b>Credit:</b>  </td><td colspan="2">{{ number_format($credit, 3, '.', '') }}KD  </td><td colspan="2"><b>الائتمان</b>  </td>
