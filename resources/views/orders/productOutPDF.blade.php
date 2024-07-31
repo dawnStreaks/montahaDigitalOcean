@@ -224,7 +224,7 @@ Exchange or return within 14 days of purchase with the original invoice. </b>
 </body>
 </html>
 
-<!doctype html>
+<!-- <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -332,7 +332,7 @@ Exchange or return within 14 days of purchase with the original invoice. </b>
 </head>
 <body>
     <div align='center'>
-    <!-- <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;"> -->
+     <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;"> 
                                                            
     <h3>{{ $companyInfo->name }}</h3><br>
    
@@ -368,7 +368,6 @@ Exchange or return within 14 days of purchase with the original invoice. </b>
 
                 <td colspan="2">Name</td>
                 <td colspan="2">Price</td>
-                <!-- <td></td> -->
                 <td colspan="2">Subtotal</td>
                 {{-- <td colspan="1">Paid </td>
                 <td colspan="1">Credit </td> --}}
@@ -453,4 +452,4 @@ Exchange or return within 14 days of purchase with the original invoice. </b>
 </div>
     </div>
 </body>
-</html>
+</html> -->

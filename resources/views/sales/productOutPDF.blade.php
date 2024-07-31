@@ -194,15 +194,15 @@
 التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.</p>
 
 
-<p style="text-align: center;font-size: 11px">
+<p style="text-align: center;">
 Exchange or return within 14 days of purchase with the original invoice.
 </p>
 </div>
 
 </body>
 </html>
-<!doctype html>
-<html>
+<!--<!doctype html>
+ <html>
 <head>
     <meta charset="utf-8">
     <title>Invoice</title>
@@ -309,7 +309,7 @@ Exchange or return within 14 days of purchase with the original invoice.
 </head>
 <body>
     <div align='center'>
-        <!-- <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;"> -->
+         <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;"> 
                                                                
         <h3>{{ $companyInfo->name }}</h3><br>
        
@@ -342,7 +342,6 @@ Exchange or return within 14 days of purchase with the original invoice.
             <tr class="heading">
                 <td colspan="2">Name</td>
                 <td colspan="2">Price</td>
-                <!-- <td></td> -->
                 <td colspan="2">Subtotal</td>
             </tr>
 
@@ -368,7 +367,6 @@ Exchange or return within 14 days of purchase with the original invoice.
             <tr class="item {{$tr}}">
                 <td colspan="2">{{ $productData->product_name }} &nbsp;&nbsp; </td>
                 <td colspan="2">{{ $productData->price }} x {{ $productData->qty }} &nbsp;&nbsp;</td>
-                <!-- <td></td> -->
                 <td colspan="2">{{ number_format($productData->subtotal * $productData->qty, 3, '.', '') }}</td>
             </tr>
             @php 
@@ -379,8 +377,7 @@ Exchange or return within 14 days of purchase with the original invoice.
             <br>
             <br>
             <tr class="total">
-                <!-- <td></td>
-                <td></td> -->
+              
                 <td colspan="3">
                 <b>Total Qty:</b> {{number_format($total)}} <b>الكمية </b>&nbsp;
                 </td>
@@ -402,4 +399,4 @@ Exchange or return within 14 days of purchase with the original invoice.
 </p>
 </div>
 </body>
-</html>
+</html> -->

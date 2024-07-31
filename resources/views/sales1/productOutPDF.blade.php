@@ -206,7 +206,7 @@ Exchange or return within 14 days of purchase with the original invoice.
     </div>
 </body>
 </html>
-<!doctype html>
+<!-- <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -345,7 +345,6 @@ Exchange or return within 14 days of purchase with the original invoice.
             <tr class="heading">
                 <td colspan="2">Name</td>
                 <td colspan="2">Price</td>
-                <!-- <td></td> -->
                 <td colspan="2">Subtotal</td>
             </tr>
 
@@ -373,7 +372,6 @@ Exchange or return within 14 days of purchase with the original invoice.
             <tr class="item {{$tr}}">
                 <td colspan="2">{{ $productData->product_name }} &nbsp;&nbsp; </td>
                 <td colspan="2">{{ $productData->price }} x {{ $productData->qty }} &nbsp;&nbsp;</td>
-                <!-- <td></td> -->
                 <td colspan="2">{{ number_format($productData->subtotal * $productData->qty, 3, '.', '') }}</td>
             </tr>
             @php 
@@ -387,8 +385,7 @@ Exchange or return within 14 days of purchase with the original invoice.
             <br>
 
             <tr class="total">
-                <!-- <td></td>
-                <td></td> -->
+                
                 <td colspan="3">
                 <b>Total Qty:</b> {{number_format($allQty)}} <b>الكمية </b>&nbsp;
                 </td>
@@ -411,4 +408,4 @@ Exchange or return within 14 days of purchase with the original invoice.
         </div>
     </div>
 </body>
-</html>
+</html> -->
