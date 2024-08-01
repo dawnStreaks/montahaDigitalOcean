@@ -196,7 +196,7 @@
         <br>
         <br>
         <div>
-        <img src="{{ asset('upload/logo/qr-code.png') }}" style="width:50%; height:50%;">
+        <img src="{{ asset('upload/logo/qr-code.png') }}" style="text-align: center;width:50%; height:50%;">
 </div>
         <div>
 <br>
