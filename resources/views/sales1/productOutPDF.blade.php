@@ -194,7 +194,7 @@
             </tr>
         </table>
         <div>
-        <img src="{{ asset('upload/logo/qr-code.png') }}" style="width:10%; height:10%;">
+        <img src="{{ asset('upload/logo/qr-code.png') }}">
 </div>
         <div>
 
