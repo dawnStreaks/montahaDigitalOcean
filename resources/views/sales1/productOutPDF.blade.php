@@ -193,11 +193,14 @@
                 </td>
             </tr>
         </table>
+        <br>
+        <br>
         <div>
         <img src="{{ asset('upload/logo/qr-code.png') }}" style="width:50%; height:50%;">
 </div>
         <div>
-
+<br>
+<br>
 <p style="text-align: center;font-size: 12px">
 التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.</p>
 
