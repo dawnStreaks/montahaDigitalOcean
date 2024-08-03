@@ -195,7 +195,7 @@
         </table>
         <br>
         <br>
-        <div>
+        <div align='center'>
         <img src="{{ asset('upload/logo/qr-code.png') }}" style="text-align: center;width:50%; height:50%;">
 </div>
         <div>
