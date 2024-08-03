@@ -106,7 +106,7 @@
 </head>
 <body>
     <div align='center'>
-    <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:10%; height:10%;">
+    <img src="{{ asset('upload/logo/'.$companyInfo->logo) }}" style="width:50%; height:50%;">
                                                            
     <h3>{{ $companyInfo->name }}</h3><br>
    
@@ -210,8 +210,12 @@
             </tr>
             </tr>
         </table>
+        <br>
+        <br>
         <div>
-        <img src="{{ asset('upload/logo/qr-code.png') }}" style="width:10%; height:10%;">
+        <img src="{{ asset('upload/logo/qr-code.png') }}" style="width:50%; height:50%;">
+        <br>
+        <br>
 <div>
 <p style="text-align: center;font-size: 12px"><b>
 التبديل أو الإرجاع خلال 14 يومًا من تاريخ الشراء مع الفاتورة الأصلية.        </b></p>
