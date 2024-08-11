@@ -134,7 +134,7 @@
                 <td colspan="2"> السعر</td>
                 <td colspan="2">المجموع</td>
 
-            </tr> 
+    </tr> 
 
          <tr class="heading">
                 {{-- <td colspan="2">id</td> --}}
@@ -208,7 +208,7 @@
             
                 <td colspan="1"><b>Paid:</b> </td><td colspan="1">{{ number_format($paid_amount, 3, '.', '') }}KWD   </td><td colspan="1"><b>مدفوع</b>  </td>
             </tr>
-            </tr>
+            
         </table>
         <br>
         <br>
