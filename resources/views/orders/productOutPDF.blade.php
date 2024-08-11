@@ -36,8 +36,8 @@
         }
         
         .invoice-box table tr.top table td.title {
-            font-size: 45px;
-            line-height: 45px;
+            font-size: 55px;
+            line-height: 55px;
             color: #333;
         }
         
