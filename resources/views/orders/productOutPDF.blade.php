@@ -164,10 +164,9 @@
         </table>
         <br>
         <br>
-        <img src="{{ asset('upload/logo/qr-code.png') }}" style="width: 100px; height: 100px;">
 
         <div align='center'>
-            <img src="{{ asset('upload/logo/qr-code.png') }}" style="width: 100px; height: 100px;">
+            <img src="{{ asset('upload/logo/qr-code.png') }}" style="width: 200px; height: 200px;">
             <br>
             <br>
             <div>
