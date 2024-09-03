@@ -103,14 +103,14 @@
     <div class="invoice-box" style="transform: translateY(-50px);">
         <table cellpadding="0" cellspacing="0">
             <tr class="heading">
-                <td colspan="2">الصيف</td>
-                <td colspan="2">السعر</td>
-                <td colspan="2">المجموع</td>
+                <td colspan="1">الصيف</td>
+                <td colspan="1">السعر</td>
+                <td colspan="1">المجموع</td>
             </tr>
             <tr class="heading">
-                <td colspan="2">Name</td>
-                <td colspan="2">Price</td>
-                <td colspan="2">Subtotal</td>
+                <td colspan="1">Name</td>
+                <td colspan="1">Price</td>
+                <td colspan="1">Subtotal</td>
             </tr>
 
             @php 
@@ -131,9 +131,9 @@
             }
             @endphp
             <tr class="item {{$tr}}">
-                <td colspan="2">{{ $productData->product_name }} &nbsp;&nbsp;</td>
-                <td colspan="2">{{ $productData->price }} x {{ $productData->qty }} &nbsp;&nbsp;</td>
-                <td colspan="2">{{ number_format($productData->subtotal * $productData->qty, 3, '.', '') }}</td>
+                <td colspan="1">{{ $productData->product_name }} &nbsp;&nbsp;</td>
+                <td colspan="1">{{ $productData->price }} x {{ $productData->qty }} &nbsp;&nbsp;</td>
+                <td colspan="1">{{ number_format($productData->subtotal * $productData->qty, 3, '.', '') }}</td>
             </tr>
             @php 
             $credit += $productData->balance;
@@ -166,7 +166,7 @@
         <br>
 
         <div align='center'>
-            <img src="{{ asset('upload/logo/qr-code.png') }}" style="width: 200px; height: 200px;">
+            <img src="{{ asset('upload/logo/qr-code.png') }}" style="width: 100px; height: 100px;">
             <br>
             <br>
             <div>
