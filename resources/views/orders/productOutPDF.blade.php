@@ -146,11 +146,11 @@
             <br>
 
             <tr class="total">
-                <td colspan="1"><b>Qty:</b></td>
-                <td colspan="1">{{number_format($total)}} <b>الكمية</b></td>
-                <td colspan="1"><b>Cost:</b></td>
-                <td colspan="1">{{number_format($allTotal, 3, '.', '')}}KWD</td>
-                <td colspan="1"><b>يكلف</b></td>
+                <td colspan="1"><b>Qty:</b>
+                {{number_format($total)}} <b>الكمية</b></td>
+                <td colspan="1"><b>Cost:</b>
+                {{number_format($allTotal, 3, '.', '')}}KWD
+                <b>يكلف</b></td>
             </tr>
             <tr>
                 <td colspan="1"><b>Credit:</b></td>
