@@ -157,9 +157,9 @@
                 {{ number_format($credit, 3, '.', '') }}KWD
                 الائتمان</td>
                 <td colspan="1"></td>
-                <td colspan="1"><b>Paid:</b></td>
-                <td colspan="1">{{ number_format($paid_amount, 3, '.', '') }}KWD</td>
-                <td colspan="1"><b>مدفوع</b></td>
+                <td colspan="1">Paid:
+                {{ number_format($paid_amount, 3, '.', '') }}KWD
+                <b>مدفوع</b></td>
             </tr>
         </table>
         <br>
