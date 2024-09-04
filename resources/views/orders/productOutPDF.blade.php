@@ -35,24 +35,24 @@
             background: #eee;
             border-bottom: 1px solid #ddd;
             font-weight: bold;
-            font-size: 22px; /* Larger font for headings */
+            font-size: 15px; /* Larger font for headings */
         }
         
         .invoice-box table tr.item td {
             border-bottom: 1px solid #eee;
-            font-size: 20px; /* Larger font for items */
+            font-size: 15px; /* Larger font for items */
         }
         
         .invoice-box table tr.total td {
             border-top: 2px solid #eee;
             font-weight: bold;
-            font-size: 22px; /* Larger font for totals */
+            font-size: 15px; /* Larger font for totals */
         }
 
         @media print {
             html, body {
                 max-width: 80mm;
-                font-size: 22px; /* Larger print font size */
+                font-size: 15px; /* Larger print font size */
             }
         }
 
@@ -62,7 +62,7 @@
                 width: 100%;
                 display: block;
                 text-align: center;
-                font-size: 22px; /* Larger font size for small screens */
+                font-size: 15px; /* Larger font size for small screens */
             }
         }
         
