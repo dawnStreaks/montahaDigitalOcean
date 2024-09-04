@@ -100,7 +100,7 @@
         </div>
     </div>
 
-    <div class="invoice-box" style="transform: translateY(-50px);">
+    <div class="invoice-box" style="transform: translateY(-40px) translateX(-20px);">
         <table cellpadding="0" cellspacing="0">
             <tr class="heading">
                 <td colspan="1">الصيف</td>
