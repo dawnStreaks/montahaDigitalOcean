@@ -26,7 +26,7 @@
         }
         
         .invoice-box table td {
-            padding: 10px; /* Increase padding for better spacing */
+            padding: 7px; /* Increase padding for better spacing */
             vertical-align: top;
             font-size: 20px; /* Increase font size for table cells */
         }
