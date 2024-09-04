@@ -13,7 +13,7 @@
 
         .invoice-box {
             width: 100%;
-            padding: 30px;
+            padding: 20px;
             border: 1px solid #eee;
             box-shadow: 0 0 10px rgba(0, 0, 0, .15);
             font-size: 20px; /* Increase font size in invoice-box */
