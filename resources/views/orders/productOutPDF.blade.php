@@ -16,7 +16,7 @@
             padding: 30px;
             border: 1px solid #eee;
             box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-            font-size: 15px; /* Increase font size in invoice-box */
+            font-size: 12px; /* Increase font size in invoice-box */
             line-height: 30px; /* Increase line height for better readability */
         }
 
@@ -28,7 +28,7 @@
         .invoice-box table td {
             padding: 7px; /* Increase padding for better spacing */
             vertical-align: top;
-            font-size: 15px; /* Increase font size for table cells */
+            font-size: 12px; /* Increase font size for table cells */
         }
 
         .invoice-box table tr.heading td {
